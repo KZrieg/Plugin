@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="minhook">
+      <UniqueIdentifier>{3f341150-c095-4a7f-b870-02f3c868824e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{7d013be5-1f41-410c-85d4-a63201c2ee0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hack">
+      <UniqueIdentifier>{b113703c-b217-437a-b97b-d40560c20d08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dumper">
+      <UniqueIdentifier>{056e60b8-760d-4e8e-aff1-6e8849298a08}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="minhook\MinHook.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx11.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="hack\console.h">
+      <Filter>hack</Filter>
+    </ClInclude>
+    <ClInclude Include="hack\ui.h">
+      <Filter>hack</Filter>
+    </ClInclude>
+    <ClInclude Include="hack\Autostrafe.h">
+      <Filter>hack</Filter>
+    </ClInclude>
+    <ClInclude Include="hack\Bhop.h">
+      <Filter>hack</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\interfaces.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\materialsystem2_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\networksystem_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\offsets.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\panorama_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\particles_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\pulse_system_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\rendersystemdx11_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\resourcesystem_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\scenesystem_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\schemasystem_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\server_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\soundsystem_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\steamaudio_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\vphysics2_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\worldrenderer_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\animationsystem_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\buttons.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\client_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\engine2_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+    <ClInclude Include="dumper\host_dll.hpp">
+      <Filter>dumper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="minhook\minhook.lib">
+      <Filter>minhook</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="hack\console.cpp">
+      <Filter>hack</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\ui.cpp">
+      <Filter>hack</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\Bhop.cpp">
+      <Filter>hack</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\Autostrafe.cpp">
+      <Filter>hack</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
