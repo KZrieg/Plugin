@@ -117,6 +117,12 @@
     <ClInclude Include="dumper\host_dll.hpp">
       <Filter>dumper</Filter>
     </ClInclude>
+    <ClInclude Include="hack\hook.h">
+      <Filter>hack</Filter>
+    </ClInclude>
+    <ClInclude Include="hack\proto.hpp">
+      <Filter>hack</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="minhook\minhook.lib">
@@ -153,6 +159,12 @@
       <Filter>hack</Filter>
     </ClCompile>
     <ClCompile Include="hack\Autostrafe.cpp">
+      <Filter>hack</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\hook.cpp">
+      <Filter>hack</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\proto.cpp">
       <Filter>hack</Filter>
     </ClCompile>
   </ItemGroup>

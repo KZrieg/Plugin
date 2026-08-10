@@ -1,3 +1,4 @@
+// Console.cpp
 #include "Console.h"
 #include <Windows.h>
 #include <vector>
@@ -9,8 +10,7 @@
 static std::vector<std::string> g_logs;
 static std::mutex g_mutex;
 
-void InitConsole()
-{
+void InitConsole() {
     static bool done = false;
     if (done) return;
     done = true;
@@ -23,8 +23,7 @@ void InitConsole()
     freopen_s(&f, "CONOUT$", "w", stderr);
 }
 
-void Log(const char* fmt, ...)
-{
+void Log(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
     char buf[2048];
@@ -38,10 +37,8 @@ void Log(const char* fmt, ...)
     printf("%s\n", buf);
 }
 
-void DrawConsole(bool* p_open)
-{
-    if (!ImGui::Begin("Console", p_open))
-    {
+void DrawConsole(bool* p_open) {
+    if (!ImGui::Begin("Console", p_open)) {
         ImGui::End();
         return;
     }

@@ -43,6 +43,8 @@
     <ClInclude Include="hack\Autostrafe.h" />
     <ClInclude Include="hack\Bhop.h" />
     <ClInclude Include="hack\console.h" />
+    <ClInclude Include="hack\hook.h" />
+    <ClInclude Include="hack\proto.hpp" />
     <ClInclude Include="hack\ui.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -61,6 +63,8 @@
     <ClCompile Include="hack\Autostrafe.cpp" />
     <ClCompile Include="hack\Bhop.cpp" />
     <ClCompile Include="hack\console.cpp" />
+    <ClCompile Include="hack\hook.cpp" />
+    <ClCompile Include="hack\proto.cpp" />
     <ClCompile Include="hack\ui.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />

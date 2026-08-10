@@ -1,3 +1,4 @@
+// Autostrafe.cpp
 #include "Autostrafe.h"
 #include "Console.h"
 #include "offsets.hpp"
@@ -7,14 +8,15 @@
 #include <atomic>
 #include <cmath>
 
+using namespace cs2_dumper::offsets::client_dll;
+using namespace cs2_dumper::schemas::client_dll;
+
 std::atomic<bool> autostrafeEnabled{ false };
 std::atomic<AutostrafeMode> autostrafeMode{ AutostrafeMode::Normal };
 
-// ---------- 基础结构 ----------
 struct Vector { float x, y, z; };
 struct QAngle { float x, y, z; };
 
-// ---------- CUserCmd 结构（与 Bhop 保持一致） ----------
 struct CUserCmd {
     int command_number;
     int tick_count;
@@ -30,7 +32,6 @@ struct CUserCmd {
     void* pBaseCmd;
 };
 
-// ---------- 辅助函数 ----------
 static uintptr_t GetModuleBase(const wchar_t* name) {
     HMODULE hMod = GetModuleHandleW(name);
     if (!hMod) return 0;
@@ -44,8 +45,6 @@ static uintptr_t GetClientBase() {
     if (!clientBase) clientBase = GetModuleBase(L"client.dll");
     return clientBase;
 }
-
-using namespace cs2_dumper::offsets::client_dll;
 
 static uintptr_t GetEntityFromHandle(uint32_t handle) {
     if (!handle) return 0;
@@ -63,29 +62,26 @@ static uintptr_t GetLocalPlayerPawn() {
     if (direct) return direct;
     uintptr_t controller = *(uintptr_t*)(base + dwLocalPlayerController);
     if (!controller) return 0;
-    constexpr std::ptrdiff_t m_hPlayerPawn = 0x914;
-    uint32_t pawnHandle = *(uint32_t*)(controller + m_hPlayerPawn);
+    uint32_t pawnHandle = *(uint32_t*)(controller + CCSPlayerController::m_hPlayerPawn);
     if (!pawnHandle) return 0;
     return GetEntityFromHandle(pawnHandle);
 }
 
 static bool IsOnGround(uintptr_t pawn) {
     if (!pawn) return false;
-    return (*(uint32_t*)(pawn + 0x3F4) & 1) != 0;
+    return (*(uint32_t*)(pawn + C_BaseEntity::m_fFlags) & 1) != 0;
 }
 
 static Vector GetVelocity(uintptr_t pawn) {
     if (!pawn) return { 0.0f, 0.0f, 0.0f };
-    return *(Vector*)(pawn + 0x3F8);
+    return *(Vector*)(pawn + C_BaseEntity::m_vecVelocity);
 }
 
 static QAngle GetEyeAngles(uintptr_t pawn) {
     if (!pawn) return { 0.0f, 0.0f, 0.0f };
-    constexpr std::ptrdiff_t EYE_ANGLES_OFFSET = 0x3340;
-    return *(QAngle*)(pawn + EYE_ANGLES_OFFSET);
+    return *(QAngle*)(pawn + C_CSPlayerPawn::m_angEyeAngles);
 }
 
-// ---------- 自动转向核心逻辑 ----------
 void DoAutostrafeCmd(CUserCmd* cmd) {
     if (!autostrafeEnabled.load()) return;
     if (!cmd) return;
@@ -104,14 +100,14 @@ void DoAutostrafeCmd(CUserCmd* cmd) {
     if (speed < 3.0f) return;
 
     QAngle eye = GetEyeAngles(pawn);
-    float yaw = eye.y;
+    float viewYaw = eye.y;
     float velYaw = atan2f(vel.y, vel.x) * 57.2957795f;
 
     const float airAccel = 30.0f;
     float ideal = asinf(fminf(airAccel / speed, 1.0f)) * 57.2957795f;
     if (ideal > 45.0f) ideal = 45.0f;
 
-    float diff = fmodf(yaw - velYaw + 540.0f, 360.0f) - 180.0f;
+    float diff = fmodf(viewYaw - velYaw + 540.0f, 360.0f) - 180.0f;
     float sign = (diff > 0.0f) ? 1.0f : -1.0f;
 
     float sideMove = 450.0f * sign;
@@ -122,12 +118,10 @@ void DoAutostrafeCmd(CUserCmd* cmd) {
 
     if (autostrafeMode.load() == AutostrafeMode::Normal) {
         float targetYaw = velYaw - ideal * sign;
-        float delta = fmodf(targetYaw - yaw + 540.0f, 360.0f) - 180.0f;
+        float delta = fmodf(targetYaw - viewYaw + 540.0f, 360.0f) - 180.0f;
         const float correction = 0.92f;
-        cmd->viewangles.y = yaw + delta * correction;
+        cmd->viewangles.y = viewYaw + delta * correction;
     }
 }
 
-void DoAutostrafe() {
-    // 线程轮询版本（已弃用）
-}
+void DoAutostrafe() {}
