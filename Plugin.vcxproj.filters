@@ -14,10 +14,241 @@
       <UniqueIdentifier>{056e60b8-760d-4e8e-aff1-6e8849298a08}</UniqueIdentifier>
     </Filter>
     <Filter Include="protobufs">
-      <UniqueIdentifier>{fa5d9da9-8d21-4b41-a1c6-d7ed3b6cec49}</UniqueIdentifier>
+      <UniqueIdentifier>{306ddfcc-26c7-49e0-9ec9-d3a1541c426d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl">
+      <UniqueIdentifier>{b77693dc-bf33-4280-b603-004b5aad9f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\algorithm">
+      <UniqueIdentifier>{68594fa9-aaff-4be6-adcb-8d75224cfe4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\base">
+      <UniqueIdentifier>{213b0805-1916-4763-ac50-ec35090d1525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\base\internal">
+      <UniqueIdentifier>{fe98a53e-ea12-4f73-b4a1-4936fc4d791b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\cleanup">
+      <UniqueIdentifier>{7bbe54e5-f617-44a3-bbf7-6d6973f30a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\cleanup\internal">
+      <UniqueIdentifier>{f8340369-65f2-4cfd-9149-f822be836ada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\container">
+      <UniqueIdentifier>{02d4a371-a9d5-4630-9504-e0b9dfe79dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\container\internal">
+      <UniqueIdentifier>{5e4ad813-4a13-451e-91a1-6557d9a8ac0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\crc">
+      <UniqueIdentifier>{e55709e6-50ff-4d94-8195-fde82c0f3031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\crc\internal">
+      <UniqueIdentifier>{7de061bb-7f79-4afb-a32e-6c0082be4781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\debugging">
+      <UniqueIdentifier>{a1383bea-5fa7-4d97-ad45-baff7e5ee29b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\debugging\internal">
+      <UniqueIdentifier>{6510fa8e-580a-4e5f-9164-0afaa20ece94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\flags">
+      <UniqueIdentifier>{196ede17-40dd-4456-abc0-112e5d564d54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\flags\internal">
+      <UniqueIdentifier>{101eb6e7-830e-479f-95d9-f3da41144bea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\functional">
+      <UniqueIdentifier>{41f4137c-c2c1-4b65-8c1d-b5404a1568b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\functional\internal">
+      <UniqueIdentifier>{5620b605-c81b-475a-a545-d5c68d8a2d32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\hash">
+      <UniqueIdentifier>{b6a34bd0-1824-4607-b846-99d377e7d830}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\hash\internal">
+      <UniqueIdentifier>{6e070667-38c4-4536-98e0-0dcee4f5f2e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\log">
+      <UniqueIdentifier>{44993d0e-a07d-4787-be40-7d5c1a6469bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\log\internal">
+      <UniqueIdentifier>{b1e07b70-7695-499b-a881-297ac752f05b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\memory">
+      <UniqueIdentifier>{a5d29aa4-9181-4505-bd67-b5130bbf5bef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\meta">
+      <UniqueIdentifier>{bad4c5b3-6be7-43e2-a540-93df66c083a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\numeric">
+      <UniqueIdentifier>{3d95a98c-10de-48b6-b684-f638cfe2e937}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\numeric\internal">
+      <UniqueIdentifier>{880f4dba-f873-4aaf-987c-52c6336f1f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\profiling">
+      <UniqueIdentifier>{2953bae7-8a4e-4324-bd25-2fd6b42917b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\profiling\internal">
+      <UniqueIdentifier>{4a1a46b1-c5b0-4c0b-8543-d1719f8c8305}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\random">
+      <UniqueIdentifier>{68d92c3e-5d81-4c00-ac97-b3281e32f4db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\random\internal">
+      <UniqueIdentifier>{0e2837fb-5bd5-48b3-854b-77f038705e6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\status">
+      <UniqueIdentifier>{c61a9701-3f1b-47f2-b3c7-edbac66282ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\status\internal">
+      <UniqueIdentifier>{ecddb094-5100-4411-ab31-6435de6beab6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\strings">
+      <UniqueIdentifier>{4fcc0031-7b22-4038-bb7f-f3b8b0cefaaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\strings\internal">
+      <UniqueIdentifier>{1cfe3c5e-bcae-4e89-be17-a065377ab131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\strings\internal\str_format">
+      <UniqueIdentifier>{ced35df3-0295-4cfd-9c6a-e3acecc8c624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\synchronization">
+      <UniqueIdentifier>{e04c4687-b9cc-4823-86a3-3e0c048506de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\synchronization\internal">
+      <UniqueIdentifier>{c80860f8-31b8-40f6-841d-87f6c7c22526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\time">
+      <UniqueIdentifier>{dd9b2ef2-2716-4ce7-80ad-b7ccf5956466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\time\internal">
+      <UniqueIdentifier>{8d1eabf0-9b62-4a81-ac11-fff7ca9c69d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\time\internal\cctz">
+      <UniqueIdentifier>{0036ce70-8f53-4384-9232-a65c25533888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\time\internal\cctz\src">
+      <UniqueIdentifier>{6c0a1559-7e2c-4268-85e4-de1259f91735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\time\internal\cctz\include">
+      <UniqueIdentifier>{7fba5781-0760-40dc-a23f-6bb8fe8ad65d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\time\internal\cctz\include\cctz">
+      <UniqueIdentifier>{3f54c999-3f4d-4795-a76b-2a2db4787aca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\types">
+      <UniqueIdentifier>{08514a81-f9cb-4cd6-a147-35c69c7fcec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\types\internal">
+      <UniqueIdentifier>{35409b03-9019-4679-ae54-b3f381d38164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\absl\utility">
+      <UniqueIdentifier>{567041e9-4dbf-411e-8025-975c1cd859c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google">
+      <UniqueIdentifier>{bdb2eb80-9966-404b-986e-4b65db16fbd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf">
+      <UniqueIdentifier>{a327a037-e5c6-4d6b-a72e-0709afc32031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\compiler">
+      <UniqueIdentifier>{62b6df2b-1470-435c-9f30-30055c21fdb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\compiler\cpp">
+      <UniqueIdentifier>{d3012359-af79-4faa-a507-8a90f503c086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\compiler\csharp">
+      <UniqueIdentifier>{79f3f197-688b-47f0-91be-0a781cf6a7e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\compiler\java">
+      <UniqueIdentifier>{3a820edf-49b7-49c7-a426-d3250b6c8a30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\compiler\objectivec">
+      <UniqueIdentifier>{389a671e-8727-457a-9d70-fe9f8966e1f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\compiler\php">
+      <UniqueIdentifier>{84cb9bfa-87b2-42f8-bc37-f2a012785e3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\io">
+      <UniqueIdentifier>{9ba8bbea-e212-499a-b3cf-2158fe5e1280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\json">
+      <UniqueIdentifier>{9d52be99-e21a-4967-8027-495ba962bcd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\json\internal">
+      <UniqueIdentifier>{c0661987-18ec-4476-b970-a32bd14af6cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\stubs">
+      <UniqueIdentifier>{1ec6cd50-de7b-4cf5-b96a-ad0161754822}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\google\protobuf\util">
+      <UniqueIdentifier>{57958ff7-809e-45ea-b752-90547fc45265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb">
+      <UniqueIdentifier>{2ef8e6d1-e697-4ed4-b96a-02907d098bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\base">
+      <UniqueIdentifier>{1886adf7-10d9-477e-b95d-eb21a006b197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\base\internal">
+      <UniqueIdentifier>{ff6b5e4a-0c46-4602-88ac-253f238c8158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\hash">
+      <UniqueIdentifier>{d004f476-d33e-4dc0-bec1-cad2ae83c2e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\json">
+      <UniqueIdentifier>{70fa450b-cd59-4a95-a9db-50ed8938ee68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\message">
+      <UniqueIdentifier>{c9e67df4-b264-402c-803e-9ab85fed7569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\message\internal">
+      <UniqueIdentifier>{5be08f85-bf80-409b-a387-2d9f9b8b5fcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\mini_descriptor">
+      <UniqueIdentifier>{67bdf035-0f0e-4616-9f5f-f16ac2e51021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\mini_descriptor\internal">
+      <UniqueIdentifier>{dcb6f70b-40d4-425c-804c-8ae0cf467040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\mini_table">
+      <UniqueIdentifier>{0b7bb950-ca29-4c22-87f9-7b1e5d7b0f26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\mini_table\internal">
+      <UniqueIdentifier>{56ec1c2f-cb4e-4461-8671-7b46833b3217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\port">
+      <UniqueIdentifier>{4d604294-92d4-4072-a40e-f530989ecb99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\reflection">
+      <UniqueIdentifier>{bed21289-e07c-4624-b98f-251536ec2555}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\reflection\internal">
+      <UniqueIdentifier>{41bcd62e-f6bf-469b-a515-7673a85b0839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\text">
+      <UniqueIdentifier>{0745b1fe-dfd5-42d2-a609-07b5e1d80cad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\text\internal">
+      <UniqueIdentifier>{dddaa083-86f5-4340-9823-fd4db03bd151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\util">
+      <UniqueIdentifier>{c9d18796-2e53-4e24-a106-872297863984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\wire">
+      <UniqueIdentifier>{df451708-2b74-4522-a665-0c4c0e7e9456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\wire\internal">
+      <UniqueIdentifier>{cd725be4-dfe3-473f-b8ea-82e65aea70d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobufs\upb\wire\decode_fast">
+      <UniqueIdentifier>{fc8df107-f11f-4f70-94c7-2be2283c7d29}</UniqueIdentifier>
     </Filter>
     <Filter Include="protobufs\csgo">
-      <UniqueIdentifier>{f770c3d2-4b86-4fe7-8669-b0eda55e2c69}</UniqueIdentifier>
+      <UniqueIdentifier>{24ed70d3-f72a-498b-89bc-296609b5f794}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,134 +360,1877 @@
     <ClInclude Include="hack\proto.hpp">
       <Filter>hack</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steamnetworkingsockets_messages_certs.pb.h">
+    <ClInclude Include="protobufs\utf8_range.h">
       <Filter>protobufs</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steamnetworkingsockets_messages_udp.pb.h">
+    <ClInclude Include="protobufs\utf8_validity.h">
       <Filter>protobufs</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\te.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\algorithm\algorithm.h">
+      <Filter>protobufs\absl\algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\uifontfile_format.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\algorithm\container.h">
+      <Filter>protobufs\absl\algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\usercmd.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\attributes.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\usermessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\call_once.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\valveextensions.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\casts.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\base_gcmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\config.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\c_peer2peer_netmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\const_init.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\clientmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\dynamic_annotations.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\connectionless_netmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\fast_type_id.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\cs_gameevents.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\log_severity.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\cs_prediction_events.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\macros.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\cs_usercmd.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\no_destructor.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\cstrike15_gcmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\nullability.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\cstrike15_usermessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\optimization.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\demo.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\options.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\econ_gcmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\policy_checks.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\engine_gcmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\port.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\enums_clientserver.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\prefetch.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\fatdemo.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\thread_annotations.h">
+      <Filter>protobufs\absl\base</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\gameevents.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\dynamic_annotations.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\gcsdk_gcmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\endian.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\gcsystemmsgs.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\errno_saver.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\netmessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\exception_safety_testing.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\network_connection.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\exception_testing.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\networkbasetypes.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\hide_ptr.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\networksystem_protomessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\identity.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\prediction_events.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\iterator_traits.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\source2_steam_stats.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\iterator_traits_test_helper.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steamdatagram_messages_auth.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\low_level_alloc.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steamdatagram_messages_sdr.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\low_level_scheduling.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\nullability_deprecated.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_base.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\per_thread_tls.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_cloud.steamworkssdk.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\poison.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_gamenetworkingui.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\pretty_function.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_gc.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\raw_logging.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_helprequest.steamworkssdk.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\scheduling_mode.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_oauth.steamworkssdk.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\scoped_set_env.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_player.steamworkssdk.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\spinlock.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_publishedfile.steamworkssdk.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\spinlock_wait.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steammessages_unified_base.steamworkssdk.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\strerror.h">
+      <Filter>protobufs\absl\base\internal</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\steamnetworkingsockets_messages.pb.h">
-      <Filter>protobufs</Filter>
+    <ClInclude Include="protobufs\absl\base\internal\sysinfo.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\thread_identity.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\throw_delegate.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\tracing.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\tsan_mutex_interface.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\unaligned_access.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\unscaledcycleclock.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\unscaledcycleclock_config.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\atomic_hook.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\atomic_hook_test_helper.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\cycleclock.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\cycleclock_config.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\base\internal\direct_mmap.h">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\cleanup\cleanup.h">
+      <Filter>protobufs\absl\cleanup</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\cleanup\internal\cleanup.h">
+      <Filter>protobufs\absl\cleanup\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\btree_map.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\btree_set.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\btree_test.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\fixed_array.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\flat_hash_map.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\flat_hash_set.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\hash_container_defaults.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\inlined_vector.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\node_hash_map.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\node_hash_set.h">
+      <Filter>protobufs\absl\container</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\common.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\common_policy_traits.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\compressed_tuple.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\container_memory.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hash_function_defaults.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hash_generator_testing.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hash_policy_testing.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hash_policy_traits.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hashtable_control_bytes.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hashtable_debug.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hashtable_debug_hooks.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\hashtablez_sampler.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\inlined_vector.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\layout.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\node_slot_policy.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\raw_hash_map.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\raw_hash_set.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\raw_hash_set_resize_impl.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\test_allocator.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\test_instance_tracker.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\tracked.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_map_constructor_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_map_lookup_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_map_members_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_map_modifiers_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_set_constructor_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_set_lookup_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_set_members_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\unordered_set_modifiers_test.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\btree.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\container\internal\btree_container.h">
+      <Filter>protobufs\absl\container\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\crc32c.h">
+      <Filter>protobufs\absl\crc</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\crc_internal.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\crc_memcpy.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\crc32_x86_arm_combined_simd.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\crc32c.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\crc32c_inline.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\non_temporal_arm_intrinsics.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\non_temporal_memcpy.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\cpu_detect.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\crc.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\crc\internal\crc_cord_state.h">
+      <Filter>protobufs\absl\crc\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\failure_signal_handler.h">
+      <Filter>protobufs\absl\debugging</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\leak_check.h">
+      <Filter>protobufs\absl\debugging</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\stacktrace.h">
+      <Filter>protobufs\absl\debugging</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\symbolize.h">
+      <Filter>protobufs\absl\debugging</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\stack_consumption.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\stacktrace_config.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\symbolize.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\utf8_for_code_point.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\vdso_support.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\address_is_readable.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\addresses.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\bounded_utf8_length_sequence.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\decode_rust_punycode.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\demangle.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\demangle_rust.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\elf_mem_image.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\debugging\internal\examine_stack.h">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\config.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\declare.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\flag.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\marshalling.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\parse.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\reflection.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\usage.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\usage_config.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\commandlineflag.h">
+      <Filter>protobufs\absl\flags</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\parse.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\path_util.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\private_handle_accessor.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\program_name.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\registry.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\sequence_lock.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\usage.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\commandlineflag.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\flags\internal\flag.h">
+      <Filter>protobufs\absl\flags\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\functional\any_invocable.h">
+      <Filter>protobufs\absl\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\functional\bind_front.h">
+      <Filter>protobufs\absl\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\functional\function_ref.h">
+      <Filter>protobufs\absl\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\functional\overload.h">
+      <Filter>protobufs\absl\functional</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\functional\internal\front_binder.h">
+      <Filter>protobufs\absl\functional\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\functional\internal\function_ref.h">
+      <Filter>protobufs\absl\functional\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\functional\internal\any_invocable.h">
+      <Filter>protobufs\absl\functional\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\hash.h">
+      <Filter>protobufs\absl\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\hash_testing.h">
+      <Filter>protobufs\absl\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\internal\city.h">
+      <Filter>protobufs\absl\hash\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\internal\hash.h">
+      <Filter>protobufs\absl\hash\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\internal\hash_test.h">
+      <Filter>protobufs\absl\hash\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\internal\low_level_hash.h">
+      <Filter>protobufs\absl\hash\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\internal\spy_hash_state.h">
+      <Filter>protobufs\absl\hash\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\hash\internal\weakly_mixed_integer.h">
+      <Filter>protobufs\absl\hash\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\absl_check.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\absl_log.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\absl_vlog_is_on.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\check.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\die_if_null.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\flags.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\globals.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\initialize.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\log.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\log_entry.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\log_sink.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\log_sink_registry.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\log_streamer.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\scoped_mock_log.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\structured.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\vlog_is_on.h">
+      <Filter>protobufs\absl\log</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\flags.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\fnmatch.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\globals.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\log_format.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\log_impl.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\log_message.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\log_sink_set.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\nullguard.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\nullstream.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\proto.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\strip.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\structured.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\structured_proto.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\test_actions.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\test_helpers.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\test_matchers.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\vlog_config.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\voidify.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\append_truncated.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\check_impl.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\check_op.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\conditions.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\log\internal\config.h">
+      <Filter>protobufs\absl\log\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\memory\memory.h">
+      <Filter>protobufs\absl\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\meta\type_traits.h">
+      <Filter>protobufs\absl\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\numeric\bits.h">
+      <Filter>protobufs\absl\numeric</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\numeric\int128.h">
+      <Filter>protobufs\absl\numeric</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\numeric\internal\bits.h">
+      <Filter>protobufs\absl\numeric\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\numeric\internal\representation.h">
+      <Filter>protobufs\absl\numeric\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\profiling\internal\periodic_sampler.h">
+      <Filter>protobufs\absl\profiling\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\profiling\internal\sample_recorder.h">
+      <Filter>protobufs\absl\profiling\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\profiling\internal\exponential_biased.h">
+      <Filter>protobufs\absl\profiling\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\bernoulli_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\beta_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\bit_gen_ref.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\discrete_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\distributions.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\exponential_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\gaussian_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\log_uniform_int_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\mock_distributions.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\mocking_bit_gen.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\poisson_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\random.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\seed_gen_exception.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\seed_sequences.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\uniform_int_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\uniform_real_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\zipf_distribution.h">
+      <Filter>protobufs\absl\random</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\mock_helpers.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\mock_overload_set.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\mock_validators.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\nanobenchmark.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\nonsecure_base.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\pcg_engine.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\platform.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\randen.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\randen_detect.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\randen_engine.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\randen_hwaes.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\randen_slow.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\randen_traits.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\salted_seed_seq.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\seed_material.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\sequence_urbg.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\traits.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\uniform_helper.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\wide_multiply.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\chi_square.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\distribution_caller.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\distribution_test_util.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\entropy_pool.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\explicit_seed_seq.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\fast_uniform_bits.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\fastmath.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\generate_real.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\random\internal\iostream_state_saver.h">
+      <Filter>protobufs\absl\random\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\status\status.h">
+      <Filter>protobufs\absl\status</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\status\status_matchers.h">
+      <Filter>protobufs\absl\status</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\status\status_payload_printer.h">
+      <Filter>protobufs\absl\status</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\status\statusor.h">
+      <Filter>protobufs\absl\status</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\status\internal\status_matchers.h">
+      <Filter>protobufs\absl\status\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\status\internal\statusor_internal.h">
+      <Filter>protobufs\absl\status\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\status\internal\status_internal.h">
+      <Filter>protobufs\absl\status\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\cord_test_helpers.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\cordz_test_helpers.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\escaping.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\has_absl_stringify.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\has_ostream_operator.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\match.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\numbers.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\str_cat.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\str_format.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\str_join.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\str_replace.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\str_split.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\string_view.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\strip.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\substitute.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\ascii.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\charconv.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\charset.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\cord.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\cord_analysis.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\cord_buffer.h">
+      <Filter>protobufs\absl\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\pow10_helper.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\resize_uninitialized.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\stl_type_traits.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_join_internal.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_split_internal.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\string_constant.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\stringify_sink.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\utf8.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\charconv_bigint.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\charconv_parse.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_data_edge.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_internal.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_rep_btree.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_rep_btree_navigator.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_rep_btree_reader.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_rep_consume.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_rep_crc.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_rep_flat.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cord_rep_test_util.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cordz_functions.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cordz_handle.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cordz_info.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cordz_sample_token.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cordz_statistics.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cordz_update_scope.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\cordz_update_tracker.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\damerau_levenshtein_distance.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\escaping.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\escaping_test_common.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\memutil.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\numbers_test_common.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\ostringstream.h">
+      <Filter>protobufs\absl\strings\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\bind.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\checker.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\constexpr_parser.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\extension.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\float_conversion.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\output.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\parser.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\strings\internal\str_format\arg.h">
+      <Filter>protobufs\absl\strings\internal\str_format</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\barrier.h">
+      <Filter>protobufs\absl\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\blocking_counter.h">
+      <Filter>protobufs\absl\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\mutex.h">
+      <Filter>protobufs\absl\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\notification.h">
+      <Filter>protobufs\absl\synchronization</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\create_thread_identity.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\futex.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\futex_waiter.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\graphcycles.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\kernel_timeout.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\per_thread_sem.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\pthread_waiter.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\sem_waiter.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\stdcpp_waiter.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\thread_pool.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\waiter.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\waiter_base.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\synchronization\internal\win32_waiter.h">
+      <Filter>protobufs\absl\synchronization\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\civil_time.h">
+      <Filter>protobufs\absl\time</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\clock.h">
+      <Filter>protobufs\absl\time</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\time.h">
+      <Filter>protobufs\absl\time</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\test_util.h">
+      <Filter>protobufs\absl\time\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\src\time_zone_impl.h">
+      <Filter>protobufs\absl\time\internal\cctz\src</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\src\time_zone_info.h">
+      <Filter>protobufs\absl\time\internal\cctz\src</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\src\time_zone_libc.h">
+      <Filter>protobufs\absl\time\internal\cctz\src</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\src\time_zone_posix.h">
+      <Filter>protobufs\absl\time\internal\cctz\src</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\src\tzfile.h">
+      <Filter>protobufs\absl\time\internal\cctz\src</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\src\time_zone_fixed.h">
+      <Filter>protobufs\absl\time\internal\cctz\src</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\src\time_zone_if.h">
+      <Filter>protobufs\absl\time\internal\cctz\src</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\include\cctz\time_zone.h">
+      <Filter>protobufs\absl\time\internal\cctz\include\cctz</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\include\cctz\zone_info_source.h">
+      <Filter>protobufs\absl\time\internal\cctz\include\cctz</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\include\cctz\civil_time.h">
+      <Filter>protobufs\absl\time\internal\cctz\include\cctz</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\time\internal\cctz\include\cctz\civil_time_detail.h">
+      <Filter>protobufs\absl\time\internal\cctz\include\cctz</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\types\compare.h">
+      <Filter>protobufs\absl\types</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\types\optional.h">
+      <Filter>protobufs\absl\types</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\types\span.h">
+      <Filter>protobufs\absl\types</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\types\variant.h">
+      <Filter>protobufs\absl\types</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\types\any.h">
+      <Filter>protobufs\absl\types</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\types\internal\span.h">
+      <Filter>protobufs\absl\types\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\absl\utility\utility.h">
+      <Filter>protobufs\absl\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\symbol_checker.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\text_format.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\thread_safe_arena.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\timestamp.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\type.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\unknown_field_set.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\varint_shuffle.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\wire_format.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\wire_format_lite.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\wrappers.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\any.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\any.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\api.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\arena.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\arena_align.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\arena_allocation_policy.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\arena_cleanup.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\arenastring.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\arenaz_sampler.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\cpp_edition_defaults.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\cpp_features.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor.upb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor.upb_minitable.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor_database.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor_legacy.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor_lite.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\descriptor_visitor.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\duration.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\dynamic_message.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\empty.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\endian.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\explicitly_constructed.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\extension_set.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\extension_set_inl.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\feature_resolver.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\field_access_listener.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\field_mask.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\field_with_arena.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_enum_reflection.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_enum_util.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_message_bases.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_message_reflection.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_message_tctable_decl.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_message_tctable_gen.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_message_tctable_impl.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\generated_message_util.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\has_bits.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\implicit_weak_message.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\inlined_string_field.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\internal_feature_helper.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\internal_metadata_locator.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\internal_visibility.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\map.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\map_entry.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\map_field.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\map_field_lite.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\map_type_handler.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\message.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\message_lite.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\metadata.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\metadata_lite.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\micro_string.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\parse_context.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\port.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\raw_ptr.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\reflection.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\reflection_internal.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\reflection_mode.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\reflection_ops.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\reflection_visit_field_info.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\reflection_visit_fields.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\repeated_field.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\repeated_field_proxy.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\repeated_field_proxy_iterator.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\repeated_field_proxy_traits.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\repeated_ptr_field.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\runtime_version.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\serial_arena.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\service.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\source_context.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\string_block.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\struct.pb.h">
+      <Filter>protobufs\google\protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\command_line_interface.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\importer.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\notices.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\parser.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\plugin.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\plugin.pb.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\retention.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\scc.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\subprocess.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\versions.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\zip_writer.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\code_generator.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\code_generator_lite.h">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\cpp\names.h">
+      <Filter>protobufs\google\protobuf\compiler\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\cpp\options.h">
+      <Filter>protobufs\google\protobuf\compiler\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\cpp\helpers.h">
+      <Filter>protobufs\google\protobuf\compiler\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\csharp\names.h">
+      <Filter>protobufs\google\protobuf\compiler\csharp</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\generator.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\helpers.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\java_features.pb.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\name_resolver.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\names.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\names_internal.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\options.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\java\doc_comment.h">
+      <Filter>protobufs\google\protobuf\compiler\java</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\objectivec\nsobject_methods.h">
+      <Filter>protobufs\google\protobuf\compiler\objectivec</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\objectivec\line_consumer.h">
+      <Filter>protobufs\google\protobuf\compiler\objectivec</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\objectivec\names.h">
+      <Filter>protobufs\google\protobuf\compiler\objectivec</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\compiler\php\names.h">
+      <Filter>protobufs\google\protobuf\compiler\php</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\io_win32.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\printer.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\strtod.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\tokenizer.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\zero_copy_sink.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\zero_copy_stream.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\zero_copy_stream_impl.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\zero_copy_stream_impl_lite.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\coded_stream.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\io\gzip_stream.h">
+      <Filter>protobufs\google\protobuf\io</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\json.h">
+      <Filter>protobufs\google\protobuf\json</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\parser.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\parser_traits.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\unparser.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\unparser_traits.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\untyped_message.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\writer.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\zero_copy_buffered_stream.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\descriptor_traits.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\lexer.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\json\internal\message_path.h">
+      <Filter>protobufs\google\protobuf\json\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\stubs\callback.h">
+      <Filter>protobufs\google\protobuf\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\stubs\common.h">
+      <Filter>protobufs\google\protobuf\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\stubs\platform_macros.h">
+      <Filter>protobufs\google\protobuf\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\stubs\port.h">
+      <Filter>protobufs\google\protobuf\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\stubs\status_macros.h">
+      <Filter>protobufs\google\protobuf\stubs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\field_mask_util.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\internal_timeval.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\json_util.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\message_differencer.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\time_util.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\type_resolver.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\type_resolver_util.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\delimited_message_util.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\google\protobuf\util\field_comparator.h">
+      <Filter>protobufs\google\protobuf\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\generated_code_support.h">
+      <Filter>protobufs\upb</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\descriptor_constants.h">
+      <Filter>protobufs\upb\base</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\error_handler.h">
+      <Filter>protobufs\upb\base</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\status.h">
+      <Filter>protobufs\upb\base</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\status.hpp">
+      <Filter>protobufs\upb\base</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\string_view.h">
+      <Filter>protobufs\upb\base</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\upcast.h">
+      <Filter>protobufs\upb\base</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\internal\endian.h">
+      <Filter>protobufs\upb\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\base\internal\log2.h">
+      <Filter>protobufs\upb\base\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\hash\common.h">
+      <Filter>protobufs\upb\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\hash\ext_table.h">
+      <Filter>protobufs\upb\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\hash\int_table.h">
+      <Filter>protobufs\upb\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\hash\str_table.h">
+      <Filter>protobufs\upb\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\json\encode.h">
+      <Filter>protobufs\upb\json</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\json\decode.h">
+      <Filter>protobufs\upb\json</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\accessors.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\array.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\compare.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\compat.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\copy.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\map.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\map_gencode_util.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\merge.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\message.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\value.h">
+      <Filter>protobufs\upb\message</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\extension.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\iterator.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\map.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\map_entry.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\map_sorter.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\message.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\types.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\accessors.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\array.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\message\internal\compare_unknown.h">
+      <Filter>protobufs\upb\message\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\build_enum.h">
+      <Filter>protobufs\upb\mini_descriptor</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\decode.h">
+      <Filter>protobufs\upb\mini_descriptor</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\link.h">
+      <Filter>protobufs\upb\mini_descriptor</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\internal\modifiers.h">
+      <Filter>protobufs\upb\mini_descriptor\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\internal\wire_constants.h">
+      <Filter>protobufs\upb\mini_descriptor\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\internal\base92.h">
+      <Filter>protobufs\upb\mini_descriptor\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\internal\decoder.h">
+      <Filter>protobufs\upb\mini_descriptor\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\internal\encode.h">
+      <Filter>protobufs\upb\mini_descriptor\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_descriptor\internal\encode.hpp">
+      <Filter>protobufs\upb\mini_descriptor\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\compat.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\debug_string.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\enum.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\extension.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\extension_registry.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\field.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\file.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\generated_registry.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\message.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\sub.h">
+      <Filter>protobufs\upb\mini_table</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\extension.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\field.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\file.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\generated_registry.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\message.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\size_log2.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\sub.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\mini_table\internal\enum.h">
+      <Filter>protobufs\upb\mini_table\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\port\atomic.h">
+      <Filter>protobufs\upb\port</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\port\sanitizers.h">
+      <Filter>protobufs\upb\port</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\port\vsnprintf_compat.h">
+      <Filter>protobufs\upb\port</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\extension_range.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\field_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\file_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\message.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\message.hpp">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\message_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\message_reserved_range.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\method_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\oneof_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\service_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\common.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\def.hpp">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\def_pool.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\def_type.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\descriptor_bootstrap.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\enum_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\enum_reserved_range.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\enum_value_def.h">
+      <Filter>protobufs\upb\reflection</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\enum_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\enum_reserved_range.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\enum_value_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\extension_range.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\field_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\file_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\message_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\message_reserved_range.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\method_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\oneof_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\service_def.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\upb_edition_defaults.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\def_pool.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\reflection\internal\desc_state.h">
+      <Filter>protobufs\upb\reflection\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\text\debug_string.h">
+      <Filter>protobufs\upb\text</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\text\encode.h">
+      <Filter>protobufs\upb\text</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\text\options.h">
+      <Filter>protobufs\upb\text</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\text\internal\encode.h">
+      <Filter>protobufs\upb\text\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\util\required_fields.h">
+      <Filter>protobufs\upb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\util\def_to_proto.h">
+      <Filter>protobufs\upb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\byte_size.h">
+      <Filter>protobufs\upb\wire</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\decode.h">
+      <Filter>protobufs\upb\wire</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\encode.h">
+      <Filter>protobufs\upb\wire</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\eps_copy_input_stream.h">
+      <Filter>protobufs\upb\wire</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\reader.h">
+      <Filter>protobufs\upb\wire</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\types.h">
+      <Filter>protobufs\upb\wire</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\writer.h">
+      <Filter>protobufs\upb\wire</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\internal\eps_copy_input_stream.h">
+      <Filter>protobufs\upb\wire\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\internal\reader.h">
+      <Filter>protobufs\upb\wire\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\internal\decoder.h">
+      <Filter>protobufs\upb\wire\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\decode_fast\combinations.h">
+      <Filter>protobufs\upb\wire\decode_fast</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\decode_fast\data.h">
+      <Filter>protobufs\upb\wire\decode_fast</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\upb\wire\decode_fast\select.h">
+      <Filter>protobufs\upb\wire\decode_fast</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,137 +2276,149 @@
     <ClCompile Include="hack\proto.cpp">
       <Filter>hack</Filter>
     </ClCompile>
-    <ClCompile Include="protobufs\steamnetworkingsockets_messages_udp.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\te.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\uifontfile_format.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\usercmd.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\usermessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\valveextensions.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\base_gcmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\c_peer2peer_netmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\clientmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\connectionless_netmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\cs_gameevents.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\cs_prediction_events.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\cs_usercmd.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\cstrike15_gcmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\cstrike15_usermessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\demo.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\econ_gcmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\engine_gcmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\enums_clientserver.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\fatdemo.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\gameevents.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\gcsdk_gcmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\gcsystemmsgs.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\netmessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\network_connection.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\networkbasetypes.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\networksystem_protomessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\prediction_events.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\source2_steam_stats.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steamdatagram_messages_auth.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steamdatagram_messages_sdr.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_base.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_cloud.steamworkssdk.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_gamenetworkingui.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_gc.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_helprequest.steamworkssdk.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_oauth.steamworkssdk.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_player.steamworkssdk.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_publishedfile.steamworkssdk.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steammessages_unified_base.steamworkssdk.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steamnetworkingsockets_messages.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
-    <ClCompile Include="protobufs\steamnetworkingsockets_messages_certs.pb.cc">
-      <Filter>protobufs</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="protobufs\absl\base\internal\spinlock_akaros.inc">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\base\internal\spinlock_linux.inc">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\base\internal\spinlock_posix.inc">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\base\internal\spinlock_win32.inc">
+      <Filter>protobufs\absl\base\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\symbolize_darwin.inc">
+      <Filter>protobufs\absl\debugging</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\symbolize_elf.inc">
+      <Filter>protobufs\absl\debugging</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\symbolize_emscripten.inc">
+      <Filter>protobufs\absl\debugging</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\symbolize_unimplemented.inc">
+      <Filter>protobufs\absl\debugging</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\symbolize_win32.inc">
+      <Filter>protobufs\absl\debugging</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_aarch64-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_arm-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_emscripten-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_generic-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_powerpc-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_riscv-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_unimplemented-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_win32-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\debugging\internal\stacktrace_x86-inl.inc">
+      <Filter>protobufs\absl\debugging\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\log\check_test_impl.inc">
+      <Filter>protobufs\absl\log</Filter>
+    </None>
+    <None Include="protobufs\absl\log\log_basic_test_impl.inc">
+      <Filter>protobufs\absl\log</Filter>
+    </None>
+    <None Include="protobufs\absl\numeric\int128_have_intrinsic.inc">
+      <Filter>protobufs\absl\numeric</Filter>
+    </None>
+    <None Include="protobufs\absl\numeric\int128_no_intrinsic.inc">
+      <Filter>protobufs\absl\numeric</Filter>
+    </None>
+    <None Include="protobufs\absl\time\internal\get_current_time_chrono.inc">
+      <Filter>protobufs\absl\time\internal</Filter>
+    </None>
+    <None Include="protobufs\absl\time\internal\get_current_time_posix.inc">
+      <Filter>protobufs\absl\time\internal</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\struct.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\timestamp.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\type.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\wrappers.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\any.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\api.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\c_sharp_features.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\cpp_features.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\descriptor.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\duration.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\empty.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\field_mask.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\go_features.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\java_features.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\os_macros_restore.inc">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\os_macros_undef.inc">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\port_def.inc">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\port_undef.inc">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\source_context.proto">
+      <Filter>protobufs\google\protobuf</Filter>
+    </None>
+    <None Include="protobufs\google\protobuf\compiler\plugin.proto">
+      <Filter>protobufs\google\protobuf\compiler</Filter>
+    </None>
+    <None Include="protobufs\upb\port\def.inc">
+      <Filter>protobufs\upb\port</Filter>
+    </None>
+    <None Include="protobufs\upb\port\undef.inc">
+      <Filter>protobufs\upb\port</Filter>
+    </None>
+    <None Include="protobufs\csgo\clientmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
     <None Include="protobufs\csgo\connectionless_netmessages.proto">
       <Filter>protobufs\csgo</Filter>
     </None>
@@ -557,9 +2543,6 @@
       <Filter>protobufs\csgo</Filter>
     </None>
     <None Include="protobufs\csgo\c_peer2peer_netmessages.proto">
-      <Filter>protobufs\csgo</Filter>
-    </None>
-    <None Include="protobufs\csgo\clientmessages.proto">
       <Filter>protobufs\csgo</Filter>
     </None>
   </ItemGroup>
