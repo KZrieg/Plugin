@@ -2612,9 +2612,6 @@
     <Library Include="protobufs\google\lib\libprotobuf-lite.lib">
       <Filter>protobufs\google\lib</Filter>
     </Library>
-    <Library Include="protobufs\google\lib\libprotoc.lib">
-      <Filter>protobufs\google\lib</Filter>
-    </Library>
     <Library Include="protobufs\google\lib\libupb.lib">
       <Filter>protobufs\google\lib</Filter>
     </Library>

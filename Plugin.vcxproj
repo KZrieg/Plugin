@@ -817,7 +817,6 @@
     <Library Include="protobufs\google\lib\absl_vlog_config_internal.lib" />
     <Library Include="protobufs\google\lib\libprotobuf-lite.lib" />
     <Library Include="protobufs\google\lib\libprotobuf.lib" />
-    <Library Include="protobufs\google\lib\libprotoc.lib" />
     <Library Include="protobufs\google\lib\libupb.lib" />
     <Library Include="protobufs\google\lib\libutf8_range.lib" />
     <Library Include="protobufs\google\lib\libutf8_validity.lib" />
