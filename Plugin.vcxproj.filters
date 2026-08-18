@@ -16,6 +16,9 @@
     <Filter Include="protobufs">
       <UniqueIdentifier>{fa5d9da9-8d21-4b41-a1c6-d7ed3b6cec49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="protobufs\csgo">
+      <UniqueIdentifier>{f770c3d2-4b86-4fe7-8669-b0eda55e2c69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="minhook\MinHook.h">
@@ -126,13 +129,133 @@
     <ClInclude Include="hack\proto.hpp">
       <Filter>hack</Filter>
     </ClInclude>
-    <ClInclude Include="protobufs\networkbasetypes.pb.h">
+    <ClInclude Include="protobufs\steamnetworkingsockets_messages_certs.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steamnetworkingsockets_messages_udp.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\te.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\uifontfile_format.pb.h">
       <Filter>protobufs</Filter>
     </ClInclude>
     <ClInclude Include="protobufs\usercmd.pb.h">
       <Filter>protobufs</Filter>
     </ClInclude>
+    <ClInclude Include="protobufs\usermessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
     <ClInclude Include="protobufs\valveextensions.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\base_gcmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\c_peer2peer_netmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\clientmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\connectionless_netmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\cs_gameevents.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\cs_prediction_events.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\cs_usercmd.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\cstrike15_gcmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\cstrike15_usermessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\demo.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\econ_gcmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\engine_gcmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\enums_clientserver.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\fatdemo.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\gameevents.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\gcsdk_gcmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\gcsystemmsgs.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\netmessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\network_connection.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\networkbasetypes.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\networksystem_protomessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\prediction_events.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\source2_steam_stats.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steamdatagram_messages_auth.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steamdatagram_messages_sdr.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_base.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_cloud.steamworkssdk.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_gamenetworkingui.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_gc.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_helprequest.steamworkssdk.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_oauth.steamworkssdk.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_player.steamworkssdk.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_publishedfile.steamworkssdk.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steammessages_unified_base.steamworkssdk.pb.h">
+      <Filter>protobufs</Filter>
+    </ClInclude>
+    <ClInclude Include="protobufs\steamnetworkingsockets_messages.pb.h">
       <Filter>protobufs</Filter>
     </ClInclude>
   </ItemGroup>
@@ -179,14 +302,265 @@
     <ClCompile Include="hack\proto.cpp">
       <Filter>hack</Filter>
     </ClCompile>
-    <ClCompile Include="protobufs\networkbasetypes.pb.cc">
+    <ClCompile Include="protobufs\steamnetworkingsockets_messages_udp.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\te.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\uifontfile_format.pb.cc">
       <Filter>protobufs</Filter>
     </ClCompile>
     <ClCompile Include="protobufs\usercmd.pb.cc">
       <Filter>protobufs</Filter>
     </ClCompile>
+    <ClCompile Include="protobufs\usermessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
     <ClCompile Include="protobufs\valveextensions.pb.cc">
       <Filter>protobufs</Filter>
     </ClCompile>
+    <ClCompile Include="protobufs\base_gcmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\c_peer2peer_netmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\clientmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\connectionless_netmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\cs_gameevents.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\cs_prediction_events.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\cs_usercmd.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\cstrike15_gcmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\cstrike15_usermessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\demo.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\econ_gcmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\engine_gcmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\enums_clientserver.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\fatdemo.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\gameevents.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\gcsdk_gcmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\gcsystemmsgs.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\netmessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\network_connection.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\networkbasetypes.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\networksystem_protomessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\prediction_events.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\source2_steam_stats.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steamdatagram_messages_auth.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steamdatagram_messages_sdr.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_base.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_cloud.steamworkssdk.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_gamenetworkingui.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_gc.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_helprequest.steamworkssdk.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_oauth.steamworkssdk.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_player.steamworkssdk.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_publishedfile.steamworkssdk.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steammessages_unified_base.steamworkssdk.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steamnetworkingsockets_messages.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="protobufs\steamnetworkingsockets_messages_certs.pb.cc">
+      <Filter>protobufs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="protobufs\csgo\connectionless_netmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\cs_gameevents.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\cs_prediction_events.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\cs_usercmd.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\cstrike15_gcmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\cstrike15_usermessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\demo.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\econ_gcmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\engine_gcmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\enums_clientserver.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\fatdemo.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\gameevents.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\gcsdk_gcmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\gcsystemmsgs.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\netmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\network_connection.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\networkbasetypes.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\networksystem_protomessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\prediction_events.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\source2_steam_stats.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steamdatagram_messages_auth.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steamdatagram_messages_sdr.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_base.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_cloud.steamworkssdk.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_gamenetworkingui.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_gc.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_helprequest.steamworkssdk.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_oauth.steamworkssdk.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_player.steamworkssdk.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_publishedfile.steamworkssdk.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steammessages_unified_base.steamworkssdk.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steamnetworkingsockets_messages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steamnetworkingsockets_messages_certs.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\steamnetworkingsockets_messages_udp.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\te.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\uifontfile_format.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\usercmd.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\usermessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\valveextensions.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\base_gcmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\c_peer2peer_netmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
+    <None Include="protobufs\csgo\clientmessages.proto">
+      <Filter>protobufs\csgo</Filter>
+    </None>
   </ItemGroup>
 </Project>
