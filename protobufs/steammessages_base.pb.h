@@ -59,6 +59,8 @@ enum EBanContentCheckResult : int;
 extern const uint32_t EBanContentCheckResult_internal_data_[];
 enum EProtoClanEventType : int;
 extern const uint32_t EProtoClanEventType_internal_data_[];
+enum GCProtoBufMsgSrc : int;
+extern const uint32_t GCProtoBufMsgSrc_internal_data_[];
 enum PartnerEventNotificationType : int;
 extern const uint32_t PartnerEventNotificationType_internal_data_[];
 class CBilling_Address;
@@ -214,6 +216,9 @@ template <>
 internal::EnumTraitsT<::EProtoClanEventType_internal_data_>
     internal::EnumTraitsImpl::value<::EProtoClanEventType>;
 template <>
+internal::EnumTraitsT<::GCProtoBufMsgSrc_internal_data_>
+    internal::EnumTraitsImpl::value<::GCProtoBufMsgSrc>;
+template <>
 internal::EnumTraitsT<::PartnerEventNotificationType_internal_data_>
     internal::EnumTraitsImpl::value<::PartnerEventNotificationType>;
 }  // namespace protobuf
@@ -361,6 +366,45 @@ template <>
 [[nodiscard]] inline bool PartnerEventNotificationType_Parse(
     ::absl::string_view name, PartnerEventNotificationType* PROTOBUF_NONNULL value) {
   return ::google::protobuf::internal::ParseNamedEnum<PartnerEventNotificationType>(PartnerEventNotificationType_descriptor(), name,
+                                           value);
+}
+enum GCProtoBufMsgSrc : int {
+  GCProtoBufMsgSrc_Unspecified = 0,
+  GCProtoBufMsgSrc_FromSystem = 1,
+  GCProtoBufMsgSrc_FromSteamID = 2,
+  GCProtoBufMsgSrc_FromGC = 3,
+  GCProtoBufMsgSrc_ReplySystem = 4,
+};
+
+extern const uint32_t GCProtoBufMsgSrc_internal_data_[];
+inline constexpr GCProtoBufMsgSrc GCProtoBufMsgSrc_MIN =
+    static_cast<GCProtoBufMsgSrc>(0);
+inline constexpr GCProtoBufMsgSrc GCProtoBufMsgSrc_MAX =
+    static_cast<GCProtoBufMsgSrc>(4);
+[[nodiscard]] inline bool GCProtoBufMsgSrc_IsValid(int value) {
+  return 0 <= value && value <= 4;
+}
+inline constexpr int GCProtoBufMsgSrc_ARRAYSIZE = 4 + 1;
+[[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
+GCProtoBufMsgSrc_descriptor();
+[[nodiscard]] inline auto ProtobufInternalGetEnumDescriptor(GCProtoBufMsgSrc) {
+  return GCProtoBufMsgSrc_descriptor();
+}
+template <typename T>
+[[nodiscard]] const ::std::string& GCProtoBufMsgSrc_Name(T value) {
+  static_assert(::std::is_same<T, GCProtoBufMsgSrc>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to GCProtoBufMsgSrc_Name().");
+  return GCProtoBufMsgSrc_Name(static_cast<GCProtoBufMsgSrc>(value));
+}
+template <>
+[[nodiscard]] inline const ::std::string& GCProtoBufMsgSrc_Name(GCProtoBufMsgSrc value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<GCProtoBufMsgSrc_descriptor, 0, 4>(
+      static_cast<int>(value));
+}
+[[nodiscard]] inline bool GCProtoBufMsgSrc_Parse(
+    ::absl::string_view name, GCProtoBufMsgSrc* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<GCProtoBufMsgSrc>(GCProtoBufMsgSrc_descriptor(), name,
                                            value);
 }
 using ::google::protobuf::internal::generated_enum::AbslParseFlag;
@@ -6413,6 +6457,9 @@ extern ::google::protobuf::internal::ExtensionIdentifier<
 inline constexpr int kAllowFieldNamedSteamIdFieldNumber = 50024;
 extern ::google::protobuf::internal::ExtensionIdentifier<
     ::google::protobuf::FieldOptions, ::google::protobuf::internal::PrimitiveTypeTraits< bool >, 8, false>(allow_field_named_steam_id);
+inline constexpr int kKeyFieldFieldNumber = 60000;
+extern ::google::protobuf::internal::ExtensionIdentifier<
+    ::google::protobuf::FieldOptions, ::google::protobuf::internal::PrimitiveTypeTraits< bool >, 8, false>(key_field);
 
 // ===================================================================
 
@@ -13022,6 +13069,12 @@ struct is_proto_enum<::PartnerEventNotificationType> : std::true_type {};
 template <>
 inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::PartnerEventNotificationType>() {
   return ::PartnerEventNotificationType_descriptor();
+}
+template <>
+struct is_proto_enum<::GCProtoBufMsgSrc> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::GCProtoBufMsgSrc>() {
+  return ::GCProtoBufMsgSrc_descriptor();
 }
 
 }  // namespace protobuf

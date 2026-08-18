@@ -3796,7 +3796,7 @@ const ::_pbi::ClassData* CClanEventData_get_class_data() {
 }  // namespace
 #endif  // PROTOBUF_CUSTOM_VTABLE
 static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
-    file_level_enum_descriptors_steammessages_5fbase_2eproto[3];
+    file_level_enum_descriptors_steammessages_5fbase_2eproto[4];
 static constexpr const ::_pb::ServiceDescriptor* PROTOBUF_NONNULL* PROTOBUF_NULLABLE
     file_level_service_descriptors_steammessages_5fbase_2eproto = nullptr;
 const ::uint32_t
@@ -4383,16 +4383,22 @@ const char descriptor_table_protodef_steammessages_5fbase_2eproto[] ABSL_ATTRIBU
     "EventNotificationType\022\021\n\rk_EEventStart\020\000"
     "\022\032\n\026k_EEventBroadcastStart\020\001\022\026\n\022k_EEvent"
     "MatchStart\020\002\022\032\n\026k_EEventPartnerMaxType\020\003"
-    ":A\n\022msgpool_soft_limit\022\037.google.protobuf"
-    ".MessageOptions\030\320\206\003 \001(\005:\00232:B\n\022msgpool_h"
-    "ard_limit\022\037.google.protobuf.MessageOptio"
-    "ns\030\321\206\003 \001(\005:\003384:C\n\024force_php_generation\022"
-    "\034.google.protobuf.FileOptions\030\320\206\003 \001(\010:\005f"
-    "alse:H\n\030php_output_always_number\022\035.googl"
-    "e.protobuf.FieldOptions\030\344\206\003 \001(\010:\005false:J"
-    "\n\032allow_field_named_steam_id\022\035.google.pr"
-    "otobuf.FieldOptions\030\350\206\003 \001(\010:\005falseB\tH\001\200\001"
-    "\001\200\265\030\001"
+    "*\266\001\n\020GCProtoBufMsgSrc\022 \n\034GCProtoBufMsgSr"
+    "c_Unspecified\020\000\022\037\n\033GCProtoBufMsgSrc_From"
+    "System\020\001\022 \n\034GCProtoBufMsgSrc_FromSteamID"
+    "\020\002\022\033\n\027GCProtoBufMsgSrc_FromGC\020\003\022 \n\034GCPro"
+    "toBufMsgSrc_ReplySystem\020\004:A\n\022msgpool_sof"
+    "t_limit\022\037.google.protobuf.MessageOptions"
+    "\030\320\206\003 \001(\005:\00232:B\n\022msgpool_hard_limit\022\037.goo"
+    "gle.protobuf.MessageOptions\030\321\206\003 \001(\005:\003384"
+    ":C\n\024force_php_generation\022\034.google.protob"
+    "uf.FileOptions\030\320\206\003 \001(\010:\005false:H\n\030php_out"
+    "put_always_number\022\035.google.protobuf.Fiel"
+    "dOptions\030\344\206\003 \001(\010:\005false:J\n\032allow_field_n"
+    "amed_steam_id\022\035.google.protobuf.FieldOpt"
+    "ions\030\350\206\003 \001(\010:\005false:9\n\tkey_field\022\035.googl"
+    "e.protobuf.FieldOptions\030\340\324\003 \001(\010:\005falseB\t"
+    "H\001\200\001\001\200\265\030\001"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_steammessages_5fbase_2eproto_deps[1] = {
@@ -4402,7 +4408,7 @@ static ::absl::once_flag descriptor_table_steammessages_5fbase_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_steammessages_5fbase_2eproto = {
     false,
     false,
-    6245,
+    6489,
     descriptor_table_protodef_steammessages_5fbase_2eproto,
     "steammessages_base.proto",
     &descriptor_table_steammessages_5fbase_2eproto_once,
@@ -4436,6 +4442,13 @@ PartnerEventNotificationType_descriptor() {
 }
 PROTOBUF_CONSTINIT const uint32_t PartnerEventNotificationType_internal_data_[] = {
     262144u, 0u, };
+[[nodiscard]] const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL
+GCProtoBufMsgSrc_descriptor() {
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_steammessages_5fbase_2eproto);
+  return file_level_enum_descriptors_steammessages_5fbase_2eproto[3];
+}
+PROTOBUF_CONSTINIT const uint32_t GCProtoBufMsgSrc_internal_data_[] = {
+    327680u, 0u, };
 // ===================================================================
 
 CMsgIPAddress::CMsgIPAddress(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
@@ -10875,6 +10888,10 @@ PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 ::_pbi::ExtensionIdentifier<
         ::google::protobuf::FieldOptions, ::_pbi::PrimitiveTypeTraits< bool >, 8, false>
         allow_field_named_steam_id(kAllowFieldNamedSteamIdFieldNumber, false);
+PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 ::_pbi::ExtensionIdentifier<
+        ::google::protobuf::FieldOptions, ::_pbi::PrimitiveTypeTraits< bool >, 8, false>
+        key_field(kKeyFieldFieldNumber, false);
 // @@protoc_insertion_point(namespace_scope)
 namespace google {
 namespace protobuf {
@@ -10898,6 +10915,9 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::std::false_type
             false, false, /*is_utf8=*/false),
         ::_pbi::ExtensionSet::RegisterExtension(
             &::google::protobuf::FieldOptions::default_instance(), 50024, 8,
+            false, false, /*is_utf8=*/false),
+        ::_pbi::ExtensionSet::RegisterExtension(
+            &::google::protobuf::FieldOptions::default_instance(), 60000, 8,
             false, false, /*is_utf8=*/false),
          ::std::false_type{});
 #include "google/protobuf/port_undef.inc"

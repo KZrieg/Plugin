@@ -32,7 +32,7 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
-#include "steammessages.pb.h"
+#include "steammessages_base.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
