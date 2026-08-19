@@ -1,8 +1,6 @@
 // hook.cpp
 #include "hook.h"
 #include "offsets.hpp"
-#include "Bhop.h"
-#include "Autostrafe.h"
 #include "Console.h"
 #include "imgui.h"
 #include "imgui_impl_win32.h"
@@ -10,39 +8,14 @@
 #include "ui.h"
 #include <MinHook.h>
 #include <d3d11.h>
-#include <thread>
-#include <chrono>
 
 using namespace cs2_dumper::offsets::client_dll;
 
-// ---------- 基础结构体 ----------
-struct Vector {
-    float x, y, z;
-};
-
-struct QAngle {
-    float x, y, z;
-};
-
-// ---------- CUserCmd ----------
-struct CUserCmd {
-    int command_number;
-    int tick_count;
-    QAngle viewangles;
-    Vector aimdirection;
-    float forwardmove;
-    float sidemove;
-    float upmove;
-    int buttons;
-    uint64_t nButtons;
-    uint64_t nValueScroll;
-    uint64_t nValueChanged;
-    void* pBaseCmd;
-};
-
-// ---------- 全局变量 ----------
 bool g_showMenu = true;
-static bool g_initialized = false;
+static bool g_imGuiInitialized = false;
+static bool g_hooksInstalled = false;
+static int g_frameCounter = 0;
+static const int INIT_DELAY_FRAMES = 5;
 
 static ID3D11Device* g_pd3dDevice = nullptr;
 static IDXGISwapChain* g_pSwapChain = nullptr;
@@ -57,96 +30,118 @@ static PresentFn g_origPresent = nullptr;
 using CreateMoveFn = bool(__fastcall*)(void*, int, void*);
 static CreateMoveFn g_origCreateMove = nullptr;
 
-// ---------- 前置声明 ----------
 LRESULT __stdcall WndProc(HWND, UINT, WPARAM, LPARAM);
+void InitializeImGui(IDXGISwapChain* pSwapChain);
 
-// ---------- 获取 CSGOInput ----------
 void* GetCSGOInputInstance() {
     uintptr_t client = (uintptr_t)GetModuleHandleA("client.dll");
-    if (!client) return nullptr;
-    return (void*)(client + dwCSGOInput);
+    return client ? (void*)(client + dwCSGOInput) : nullptr;
 }
 
-// ---------- CreateMove 钩子（最终版） ----------
 bool __fastcall hkCreateMove(void* pCSGOInput, int nSlot, void* bActive) {
-    bool bResult = g_origCreateMove(pCSGOInput, nSlot, bActive);
+    return g_origCreateMove(pCSGOInput, nSlot, bActive);
+}
 
-    constexpr std::ptrdiff_t COMMAND_OFFSET = 0x2C;
-    CUserCmd* pUserCmd = *(CUserCmd**)((uintptr_t)pCSGOInput + COMMAND_OFFSET);
-    if (pUserCmd) {
-        DoBhopCmd(pUserCmd);
-        DoAutostrafeCmd(pUserCmd);
+void InitializeImGui(IDXGISwapChain* pSwapChain) {
+    if (g_imGuiInitialized) return;
+
+    HRESULT hr = pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&g_pd3dDevice);
+    if (FAILED(hr)) {
+        Log("[-] Imgui GetDevice failed: 0x%X", hr);
+        return;
+    }
+    g_pd3dDevice->GetImmediateContext(&g_pd3dContext);
+
+    DXGI_SWAP_CHAIN_DESC sd;
+    pSwapChain->GetDesc(&sd);
+    g_hwnd = sd.OutputWindow;
+
+    ID3D11Texture2D* pBackBuffer = nullptr;
+    pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
+    if (pBackBuffer) {
+        g_pd3dDevice->CreateRenderTargetView(pBackBuffer, nullptr, &g_mainRTV);
+        pBackBuffer->Release();
     }
 
-    return bResult;
+    g_pSwapChain = pSwapChain;
+    g_pSwapChain->AddRef();
+
+    g_origWndProc = (WNDPROC)SetWindowLongPtr(g_hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
+
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO();
+    ImFont* font = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\msyh.ttc", 18.0f, nullptr, io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
+    if (!font) {
+        Log("[-] Failed to load msyh.ttc, using default font.");
+        io.Fonts->AddFontDefault();
+    }
+
+    ImGui_ImplWin32_Init(g_hwnd);
+    ImGui_ImplDX11_Init(g_pd3dDevice, g_pd3dContext);
+
+    g_imGuiInitialized = true;
+    Log("[+] Imgui Initialized.");
 }
 
-// ---------- Present 钩子 ----------
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT syncInterval, UINT flags) {
-    if (!g_initialized) {
-        pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&g_pd3dDevice);
-        g_pd3dDevice->GetImmediateContext(&g_pd3dContext);
+    if (!g_hooksInstalled) {
+        g_hooksInstalled = true;
+        Log("[+] Present hook active.");
+    }
 
-        DXGI_SWAP_CHAIN_DESC sd;
-        pSwapChain->GetDesc(&sd);
-        g_hwnd = sd.OutputWindow;
+    if (!g_imGuiInitialized) {
+        if (++g_frameCounter >= INIT_DELAY_FRAMES)
+            InitializeImGui(pSwapChain);
+        return g_origPresent(pSwapChain, syncInterval, flags);
+    }
 
+    if (!g_mainRTV) {
         ID3D11Texture2D* pBackBuffer = nullptr;
-        pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
-        if (pBackBuffer) {
+        HRESULT hr = pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
+        if (SUCCEEDED(hr) && pBackBuffer) {
             g_pd3dDevice->CreateRenderTargetView(pBackBuffer, nullptr, &g_mainRTV);
             pBackBuffer->Release();
         }
-
-        g_pSwapChain = pSwapChain;
-        g_pSwapChain->AddRef();
-
-        g_origWndProc = (WNDPROC)SetWindowLongPtr(g_hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
-
-        ImGui::CreateContext();
-        ImGuiIO& io = ImGui::GetIO();
-        ImFont* font = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\msyh.ttc", 18.0f, nullptr,
-            io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
-        if (font) io.FontDefault = font;
-        else io.Fonts->AddFontDefault();
-
-        ImGui_ImplWin32_Init(g_hwnd);
-        ImGui_ImplDX11_Init(g_pd3dDevice, g_pd3dContext);
-
-        g_initialized = true;
-        Log("[ImGui] Initialized.");
+        else {
+            return g_origPresent(pSwapChain, syncInterval, flags);
+        }
     }
 
     ImGui_ImplDX11_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
 
-    if (g_showMenu) {
+    if (g_showMenu)
         RenderUI(&g_showMenu);
-    }
 
     ImGui::EndFrame();
     ImGui::Render();
+
     g_pd3dContext->OMSetRenderTargets(1, &g_mainRTV, nullptr);
     ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 
     return g_origPresent(pSwapChain, syncInterval, flags);
 }
 
-// ---------- 窗口过程 ----------
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM);
 
 LRESULT __stdcall WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    if (uMsg == WM_SIZE && g_mainRTV) {
+        g_mainRTV->Release();
+        g_mainRTV = nullptr;
+    }
+
     if (uMsg == WM_KEYDOWN && wParam == VK_INSERT) {
         g_showMenu = !g_showMenu;
         return 0;
     }
-    if (g_initialized && ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam))
+
+    if (g_imGuiInitialized && ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam))
         return true;
+
     return CallWindowProc(g_origWndProc, hwnd, uMsg, wParam, lParam);
 }
 
-// ---------- 安装 Present 钩子 ----------
 static bool InstallPresentHook() {
     WNDCLASSEX wc = { sizeof(WNDCLASSEX), CS_CLASSDC, DefWindowProc, 0, 0,
                       GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr,
@@ -173,7 +168,7 @@ static bool InstallPresentHook() {
         &sd, &pTempSwapChain, &pTempDevice, nullptr, nullptr);
 
     if (FAILED(hr) || !pTempSwapChain) {
-        Log("[Hook] Failed to create temp D3D11 device.");
+        Log("[-] Failed to create temp D3D11 device.");
         DestroyWindow(hTempWnd);
         UnregisterClass(wc.lpszClassName, wc.hInstance);
         return false;
@@ -185,7 +180,7 @@ static bool InstallPresentHook() {
 
     MH_STATUS status = MH_CreateHook(presentAddr, hkPresent, (void**)&g_origPresent);
     if (status != MH_OK) {
-        Log("[Hook] MH_CreateHook Present failed: %s", MH_StatusToString(status));
+        Log("[-] MH_CreateHook Present failed: %s", MH_StatusToString(status));
         pTempDevice->Release();
         pTempSwapChain->Release();
         DestroyWindow(hTempWnd);
@@ -194,12 +189,10 @@ static bool InstallPresentHook() {
     }
 
     status = MH_EnableHook(presentAddr);
-    if (status != MH_OK) {
-        Log("[Hook] MH_EnableHook Present failed: %s", MH_StatusToString(status));
-    }
-    else {
-        Log("[Hook] Present hook installed.");
-    }
+    if (status != MH_OK)
+        Log("[-] MH_EnableHook Present failed: %s", MH_StatusToString(status));
+    else
+        Log("[+] Present hook installed.");
 
     pTempDevice->Release();
     pTempSwapChain->Release();
@@ -208,67 +201,63 @@ static bool InstallPresentHook() {
     return true;
 }
 
-// ---------- 安装 CreateMove 钩子 ----------
 static bool InstallCreateMoveHook() {
     void* pInput = GetCSGOInputInstance();
     if (!pInput) {
-        Log("[Hook] CSGOInput instance not found.");
+        Log("[-] CSGOInput instance not found.");
         return false;
     }
 
     void** pVTable = *reinterpret_cast<void***>(pInput);
     if (!pVTable) {
-        Log("[Hook] CSGOInput VTable is null.");
+        Log("[-] CSGOInput VTable is null.");
         return false;
     }
 
     constexpr int CREATE_MOVE_INDEX = 5;
     void* createMoveAddr = pVTable[CREATE_MOVE_INDEX];
     if (!createMoveAddr) {
-        Log("[Hook] CreateMove VTable entry is null.");
+        Log("[-] CreateMove VTable entry is null.");
         return false;
     }
 
-    Log("[Hook] CreateMove found at 0x%p (VTable[%d])", createMoveAddr, CREATE_MOVE_INDEX);
+    Log("[+] CreateMove found at 0x%p", createMoveAddr);
 
     MH_STATUS status = MH_CreateHook(createMoveAddr, hkCreateMove, (void**)&g_origCreateMove);
     if (status != MH_OK) {
-        Log("[Hook] MH_CreateHook CreateMove failed: %s", MH_StatusToString(status));
+        Log("[-] MH_CreateHook CreateMove failed: %s", MH_StatusToString(status));
         return false;
     }
 
     status = MH_EnableHook(createMoveAddr);
     if (status != MH_OK) {
-        Log("[Hook] MH_EnableHook CreateMove failed: %s", MH_StatusToString(status));
+        Log("[-] MH_EnableHook CreateMove failed: %s", MH_StatusToString(status));
         return false;
     }
 
-    Log("[Hook] CreateMove hook installed.");
+    Log("[+] CreateMove hook installed.");
     return true;
 }
 
-// ---------- 公开初始化 ----------
 void InitializeHooks() {
-    Log("[Hook] Waiting for client.dll...");
+    Log("[+] Waiting for client.dll...");
     while (!GetModuleHandleA("client.dll")) Sleep(100);
-    Log("[Hook] client.dll loaded.");
+    Log("[+] client.dll loaded.");
 
-    Log("[Hook] Waiting for CSGOInput...");
+    Log("[+] Waiting for CSGOInput...");
     while (!GetCSGOInputInstance()) Sleep(100);
-    Log("[Hook] CSGOInput found.");
+    Log("[+] CSGOInput found.");
 
     if (MH_Initialize() != MH_OK) {
-        Log("[Hook] MH_Initialize failed.");
+        Log("[-] MH_Initialize failed.");
         return;
     }
 
-    if (!InstallPresentHook()) {
-        Log("[Hook] Failed to install Present hook.");
-    }
+    if (!InstallPresentHook())
+        Log("[-] Failed to install Present hook.");
 
-    if (!InstallCreateMoveHook()) {
-        Log("[Hook] Failed to install CreateMove hook.");
-    }
+    if (!InstallCreateMoveHook())
+        Log("[-] Failed to install CreateMove hook.");
 
-    Log("[Hook] All hooks initialized.");
+    Log("[+] All hooks installed.");
 }
