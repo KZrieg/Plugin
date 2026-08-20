@@ -1,4 +1,4 @@
-import "steammessages_base.proto";
+import "steammessages.proto";
 
 enum EGCItemMsg {
 	k_EMsgGCBase = 1000;

@@ -8,34 +8,27 @@
 void RenderUI(bool* p_open) {
     ImGui::Begin("Plugin", p_open);
 
-    bool bhop = bhopEnabled.load();
+    // ---------- Bhop ----------
+    bool bhop = Bhop::IsEnabled();
     if (ImGui::Checkbox("Bhop", &bhop)) {
-        bhopEnabled.store(bhop);
+        Bhop::SetEnabled(bhop);
     }
-    ImGui::SameLine();
-    ImGui::TextColored(bhop ? ImVec4(0, 1, 0, 1) : ImVec4(1, 0, 0, 1),
-        bhop ? "ON" : "OFF");
 
-    bool autostrafe = autostrafeEnabled.load();
-    if (ImGui::Checkbox("Autostrafe", &autostrafe)) {
-        autostrafeEnabled.store(autostrafe);
-    }
-    ImGui::SameLine();
-    ImGui::TextColored(autostrafe ? ImVec4(0, 1, 0, 1) : ImVec4(1, 0, 0, 1),
-        autostrafe ? "ON" : "OFF");
+    // ---------- Autostrafe ----------
+   // bool autostrafe = Autostrafe::IsEnabled();
+ //   if (ImGui::Checkbox("Autostrafe", &autostrafe)) {
+   //     Autostrafe::SetEnabled(autostrafe);
+  //  }
 
-    if (autostrafe) {
-        ImGui::Indent();
-        const char* modes[] = { "Normal", "Subtick" };
-        static int currentMode = 0;
-        currentMode = (autostrafeMode.load() == AutostrafeMode::Normal) ? 0 : 1;
-        if (ImGui::Combo("Mode", &currentMode, modes, IM_ARRAYSIZE(modes))) {
-            autostrafeMode.store(currentMode == 0 ? AutostrafeMode::Normal : AutostrafeMode::Subtick);
-        }
-        ImGui::Unindent();
-    }
+    // 如果 Autostrafe 开启，显示模式选择（简洁，不缩进，无装饰）
+    //if (autostrafe) {
+        //const char* modes[] = { "Normal", "Subtick" };
+        //int currentMode = (Autostrafe::GetMode() == AutostrafeMode::Normal) ? 0 : 1;
+       // if (ImGui::Combo("Mode", &currentMode, modes, IM_ARRAYSIZE(modes))) {
+       //     Autostrafe::SetMode(currentMode == 0 ? AutostrafeMode::Normal : AutostrafeMode::Subtick);
+   //     }
+  //  }
 
     ImGui::End();
-
     DrawConsole(nullptr);
 }

@@ -1,127 +1,142 @@
 // Bhop.cpp
 #include "Bhop.h"
-#include "offsets.hpp"
-#include "client_dll.hpp"         
+#include "usercmd.pb.h"
 #include "Console.h"
-#include <Windows.h>
-#include <Psapi.h>
+#include "offsets.hpp"
+#include "client_dll.hpp"
 #include <atomic>
-#include <cstdint>
+#include <Windows.h>
+
+#define BHOP_LOG(fmt, ...) Log("[Bhop] " fmt, ##__VA_ARGS__)
 
 using namespace cs2_dumper::offsets::client_dll;
 using namespace cs2_dumper::schemas::client_dll;
 
-// ---------- 基础结构体 ----------
-struct Vector {
-    float x, y, z;
-};
+namespace {
+    std::atomic<bool> g_enabled{ true };
+    constexpr uint64_t IN_JUMP = 1ULL << 6;
 
-struct QAngle {
-    float x, y, z;
-};
+    uintptr_t GetClientBase() {
+        static uintptr_t base = 0;
+        if (!base) {
+            base = (uintptr_t)GetModuleHandleW(L"client.dll");
+            BHOP_LOG("client.dll base: %p", base);
+        }
+        return base;
+    }
 
-// ---------- CUserCmd 结构 ----------
-// 注意：已移除 pCsgoUserCmdPb 字段
-struct CUserCmd {
-    int command_number;          // 0x00
-    int tick_count;              // 0x04
-    QAngle viewangles;           // 0x08
-    Vector aimdirection;         // 0x14
-    float forwardmove;           // 0x20
-    float sidemove;              // 0x24
-    float upmove;                // 0x28
-    int buttons;                 // 0x2C
-    uint64_t nButtons;           // 0x30
-    uint64_t nValueScroll;       // 0x38
-    uint64_t nValueChanged;      // 0x40
-    void* pBaseCmd;              // 0x48
-    // void* pCsgoUserCmdPb;     // 已移除
-};
+    template<typename T>
+    T ReadMemory(uintptr_t address) {
+        if (!address) return T{};
+        return *reinterpret_cast<T*>(address);
+    }
 
-// ---------- 常量 ----------
-static constexpr uint32_t IN_JUMP = 1ULL << 6;
-static constexpr uint32_t FL_ONGROUND = 1 << 0;
+    // 从命令中获取 Pawn（优先）
+    uintptr_t GetPawnFromCommand(CUserCmd* cmd) {
+        if (!cmd || !cmd->pCsgoUserCmdPb) return 0;
+        CUserCmdBasePB* pb = static_cast<CUserCmdBasePB*>(cmd->pCsgoUserCmdPb);
+        CBaseUserCmdPB* base = pb->mutable_base();
+        if (!base || !base->has_pawn_entity_handle()) return 0;
 
-std::atomic<bool> bhopEnabled{ false };
+        uint32_t handle = base->pawn_entity_handle();
+        if (handle == 0x00FFFFFF) return 0;
 
-// ---------- 辅助函数 ----------
-static uintptr_t GetClientBase() {
-    static uintptr_t base = 0;
-    if (!base) {
-        HMODULE mod = GetModuleHandleA("client.dll");
-        if (mod) {
-            MODULEINFO info;
-            GetModuleInformation(GetCurrentProcess(), mod, &info, sizeof(info));
-            base = (uintptr_t)mod;
+        uintptr_t entityList = ReadMemory<uintptr_t>(GetClientBase() + dwEntityList);
+        if (!entityList) return 0;
+        int index = handle & 0x7FFF;
+        return ReadMemory<uintptr_t>(entityList + index * 0x10);
+    }
+
+    // 备选：直接读取本地 Pawn
+    uintptr_t GetLocalPlayerPawn_Direct() {
+        return ReadMemory<uintptr_t>(GetClientBase() + dwLocalPlayerPawn);
+    }
+
+    // ===== 关键修改：使用 m_nActualMoveType（偏移 0x526）而不是 m_MoveType（0x525） =====
+    uint32_t GetMoveType(uintptr_t pawn) {
+        if (!pawn) return 0;
+        // m_nActualMoveType 在 C_BaseEntity 中的偏移为 0x526
+        return ReadMemory<uint8_t>(pawn + C_BaseEntity::m_nActualMoveType);
+    }
+
+    // 获取地面标志
+    uint32_t GetFlags(uintptr_t pawn) {
+        if (!pawn) return 0;
+        return ReadMemory<uint32_t>(pawn + C_BaseEntity::m_fFlags);
+    }
+
+    // Subtick 跳跃注入（落地瞬间）
+    void AddSubtickJump(CUserCmdBasePB* pb) {
+        if (!pb) return;
+        CBaseUserCmdPB* base = pb->mutable_base();
+        if (!base) return;
+        CSubtickMoveStep* step = base->add_subtick_moves();
+        if (!step) return;
+        step->set_button(IN_JUMP);
+        step->set_pressed(true);
+        step->set_when(0.0f);
+        BHOP_LOG("Subtick step added");
+    }
+}
+
+bool Bhop::IsEnabled() { return g_enabled.load(); }
+void Bhop::SetEnabled(bool enabled) { g_enabled.store(enabled); BHOP_LOG("SetEnabled: %s", enabled ? "ON" : "OFF"); }
+
+void Bhop::ProcessCommand(CUserCmd* cmd) {
+    if (!IsEnabled() || !cmd) return;
+
+    // 1. 获取本地 Pawn
+    uintptr_t pawn = GetPawnFromCommand(cmd);
+    if (!pawn) {
+        pawn = GetLocalPlayerPawn_Direct();
+        if (!pawn) {
+            BHOP_LOG("No pawn available");
+            return;
         }
     }
-    return base;
-}
 
-static uintptr_t GetEntityFromHandle(uint32_t handle) {
-    if (!handle) return 0;
-    uintptr_t base = GetClientBase();
-    if (!base) return 0;
-    uintptr_t entityList = base + dwEntityList;
-    uint32_t index = handle & 0x7FFF;
-    return *(uintptr_t*)(entityList + index * 0x10);
-}
-
-static uintptr_t GetLocalPlayerPawn() {
-    uintptr_t base = GetClientBase();
-    if (!base) return 0;
-
-    uintptr_t direct = *(uintptr_t*)(base + dwLocalPlayerPawn);
-    if (direct) return direct;
-
-    uintptr_t controller = *(uintptr_t*)(base + dwLocalPlayerController);
-    if (!controller) return 0;
-
-    uint32_t pawnHandle = *(uint32_t*)(controller + CCSPlayerController::m_hPlayerPawn);
-    return GetEntityFromHandle(pawnHandle);
-}
-
-static uint32_t GetFlags(uintptr_t pawn) {
-    if (!pawn) return 0;
-    return *(uint32_t*)(pawn + C_BaseEntity::m_fFlags);
-}
-
-static uint32_t GetMoveType(uintptr_t pawn) {
-    if (!pawn) return 0;
-    return *(uint32_t*)(pawn + C_BaseEntity::m_MoveType);
-}
-
-// ---------- 主逻辑（普通跳跃，无 Protobuf） ----------
-void DoBhopCmd(CUserCmd* cmd) {
-    if (!bhopEnabled.load() || !cmd) return;
-
-    uintptr_t pawn = GetLocalPlayerPawn();
-    if (!pawn) return;
-
+    // 2. 检查移动类型（现在使用正确的偏移）
     uint32_t moveType = GetMoveType(pawn);
-    if (moveType == 2 || moveType == 5) return;  // 梯子 / 穿墙
-
-    // 检测跳跃键是否按住
+    uint32_t flags = GetFlags(pawn);
     bool jumpPressed = (cmd->buttons & IN_JUMP) || (cmd->nButtons & IN_JUMP);
+
+    BHOP_LOG("Pawn: %p | MoveType: %u | Flags: 0x%X | Jump: %d", pawn, moveType, flags, jumpPressed);
+
+    // 3. 过滤梯子和穿墙
+    if (moveType == 2 || moveType == 5) {
+        BHOP_LOG("Skipping (ladder/noclip)");
+        return;
+    }
+
+    // 4. 如果未按下跳跃，重置地面状态
     if (!jumpPressed) {
-        // 如果未按住跳跃，重置地面状态
         static bool prevOnGround = false;
         prevOnGround = false;
         return;
     }
 
-    uint32_t flags = GetFlags(pawn);
-    bool onGround = (flags & FL_ONGROUND) != 0;
-
+    // 5. 地面检测
+    bool onGround = (flags & 1) != 0;
     static bool prevOnGround = false;
 
-    // 落地瞬间：从空中变为地面 → 执行跳跃
+    // 6. 落地瞬间逻辑
     if (!prevOnGround && onGround) {
-        cmd->buttons |= IN_JUMP;
-        cmd->nButtons |= IN_JUMP;
+        BHOP_LOG("Landing detected!");
+        CUserCmdBasePB* pb = static_cast<CUserCmdBasePB*>(cmd->pCsgoUserCmdPb);
+        if (pb) {
+            AddSubtickJump(pb);
+            cmd->buttons &= ~IN_JUMP;
+            cmd->nButtons &= ~IN_JUMP;
+            BHOP_LOG("Subtick injected");
+        }
+        else {
+            BHOP_LOG("pb null, fallback to legacy");
+            cmd->buttons |= IN_JUMP;
+            cmd->nButtons |= IN_JUMP;
+        }
     }
     else {
-        // 在空中或已在地面，清除跳跃位（防止持续按住）
+        // 非落地瞬间：清除跳跃位（防止按住连续跳）
         cmd->buttons &= ~IN_JUMP;
         cmd->nButtons &= ~IN_JUMP;
     }

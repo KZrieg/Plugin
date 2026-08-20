@@ -6,6 +6,7 @@
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx11.h"
 #include "ui.h"
+#include "Bhop.h"
 #include <MinHook.h>
 #include <d3d11.h>
 
@@ -39,7 +40,16 @@ void* GetCSGOInputInstance() {
 }
 
 bool __fastcall hkCreateMove(void* pCSGOInput, int nSlot, void* bActive) {
-    return g_origCreateMove(pCSGOInput, nSlot, bActive);
+    bool bResult = g_origCreateMove(pCSGOInput, nSlot, bActive);
+
+    // 获取 CUserCmd 指针
+    CUserCmd* pCmd = *(CUserCmd**)((uintptr_t)pCSGOInput + 0x2C);
+    if (pCmd) {
+        // 调用 Bhop 处理
+        Bhop::ProcessCommand(pCmd);
+    }
+
+    return bResult;
 }
 
 void InitializeImGui(IDXGISwapChain* pSwapChain) {

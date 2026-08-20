@@ -1,4 +1,4 @@
-import "steammessages_base.proto";
+import "steammessages.proto";
 
 enum GCClientLauncherType {
 	GCClientLauncherType_DEFAULT = 0;

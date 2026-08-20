@@ -1,4 +1,4 @@
-import "steammessages_base.proto";
+import "steammessages.proto";
 import "engine_gcmessages.proto";
 import "gcsdk_gcmessages.proto";
 
