@@ -414,6 +414,8 @@
     <ClInclude Include="protobufs\absl\types\span.h" />
     <ClInclude Include="protobufs\absl\types\variant.h" />
     <ClInclude Include="protobufs\absl\utility\utility.h" />
+    <ClInclude Include="protobufs\cs_gameevents.pb.h" />
+    <ClInclude Include="protobufs\cs_usercmd.pb.h" />
     <ClInclude Include="protobufs\google\protobuf\any.h" />
     <ClInclude Include="protobufs\google\protobuf\any.pb.h" />
     <ClInclude Include="protobufs\google\protobuf\api.pb.h" />
@@ -797,6 +799,8 @@
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="protobufs\cs_gameevents.pb.cc" />
+    <ClCompile Include="protobufs\cs_usercmd.pb.cc" />
     <ClCompile Include="protobufs\networkbasetypes.pb.cc" />
     <ClCompile Include="protobufs\network_connection.pb.cc" />
     <ClCompile Include="protobufs\usercmd.pb.cc" />
