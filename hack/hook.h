@@ -1,7 +1,5 @@
-// hack/hook.h
 #pragma once
+#include <windows.h>
 
-using CreateMoveFn = bool(__fastcall*)(void*, int, void*);
-
-bool InstallCreateMoveHook();
-void UninstallCreateMoveHook();
+bool InitializeHack();
+void ShutdownHack();

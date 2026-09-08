@@ -1,12 +1,10 @@
-// hack/main.cpp
-#include "hook.h"
-#include "Bhop.h"
-#include "Autostrafe.h"
-#include "Console.h"
-#include <Windows.h>
-#include <thread>
+#include "hack/hook.h"
+#include "hack/console.h"
+#include "hack/vacexploit.h"
+#include "MinHook.h"
 
-DWORD WINAPI MainThread(LPVOID) {
+DWORD WINAPI MainThread(LPVOID)
+{
     InitConsole();
     Log("[+] Plugin loaded");
 
@@ -15,35 +13,31 @@ DWORD WINAPI MainThread(LPVOID) {
     }
     Log("[+] client.dll loaded");
 
-    if (InstallCreateMoveHook()) {
-        Log("[+] CreateMove hooked");
+    if (MH_Initialize() != MH_OK) {
+        Log("[-] MinHook init failed");
+        return 0;
+    }
+
+    if (!InitializeHack()) {
+        Log("[-] Hack (Present hook) init failed");
     }
     else {
-        Log("[-] CreateMove hook failed");
+        Log("[+] Present hooked");
     }
 
-    Bhop::SetEnabled(true);
-    Log("[+] Bhop enabled");
-
-    Autostrafe::SetEnabled(false);
-    Autostrafe::SetMode(AutostrafeMode::Normal);
-    Log("[+] Autostrafe ready");
-
-    while (!GetAsyncKeyState(VK_END)) {
-        Sleep(50);
+    if (VACExploit_Init()) {
+        Log("[+] VAC Exploit ready");
+    }
+    else {
+        Log("[-] VAC Exploit init failed");
     }
 
-    Bhop::SetEnabled(false);
-    Autostrafe::SetEnabled(false);
-    UninstallCreateMoveHook();
-    Log("[+] Cleanup done");
-
-    FreeConsole();
-    FreeLibraryAndExitThread((HMODULE)GetModuleHandleW(L"Plugin.dll"), 0);
+    Log("[*] All systems ready");
     return 0;
 }
 
-BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID) {
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID)
+{
     if (reason == DLL_PROCESS_ATTACH) {
         DisableThreadLibraryCalls(hModule);
         CreateThread(nullptr, 0, MainThread, nullptr, 0, nullptr);

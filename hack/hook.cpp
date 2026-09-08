@@ -1,64 +1,114 @@
-// hook.cpp
 #include "hook.h"
-#include "offsets.hpp"
-#include "Console.h"
-#include "imgui.h"
-#include "imgui_impl_win32.h"
-#include "imgui_impl_dx11.h"
+#include "console.h"
 #include "ui.h"
-#include "Bhop.h"
-#include "Autostrafe.h"
-#include <MinHook.h>
+#include "MinHook.h"
+#include <imgui.h>
+#include <imgui_impl_win32.h>
+#include <imgui_impl_dx11.h>
+#include <dxgi.h>
+#include <dxgi1_2.h>
 #include <d3d11.h>
+#include <cstdio>
 
-using namespace cs2_dumper::offsets::client_dll;
+#pragma comment(lib, "dxgi.lib")
+#pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "d3dcompiler.lib")
 
-bool g_showMenu = true;
-static bool g_imGuiInitialized = false;
-static bool g_hooksInstalled = false;
-static int g_frameCounter = 0;
-static const int INIT_DELAY_FRAMES = 5;
-
-static ID3D11Device* g_pd3dDevice = nullptr;
-static IDXGISwapChain* g_pSwapChain = nullptr;
-static ID3D11DeviceContext* g_pd3dContext = nullptr;
-static ID3D11RenderTargetView* g_mainRTV = nullptr;
-static HWND g_hwnd = nullptr;
-static WNDPROC g_origWndProc = nullptr;
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 using PresentFn = HRESULT(__stdcall*)(IDXGISwapChain*, UINT, UINT);
 static PresentFn g_origPresent = nullptr;
 
-using CreateMoveFn = bool(__fastcall*)(void*, int, void*);
-static CreateMoveFn g_origCreateMove = nullptr;
-static void** g_inputVTable = nullptr; // 保存虚表指针用于卸载
+static ID3D11Device* g_pd3dDevice = nullptr;
+static ID3D11DeviceContext* g_pd3dContext = nullptr;
+static ID3D11RenderTargetView* g_mainRTV = nullptr;
+static HWND g_hwnd = nullptr;
+static WNDPROC g_origWndProc = nullptr;
+static bool g_imGuiInitialized = false;
+static bool g_hooksInstalled = false;
 
-LRESULT __stdcall WndProc(HWND, UINT, WPARAM, LPARAM);
-void InitializeImGui(IDXGISwapChain* pSwapChain);
+LRESULT __stdcall WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
-void* GetCSGOInputInstance() {
-    uintptr_t client = (uintptr_t)GetModuleHandleA("client.dll");
-    return client ? (void*)(client + dwCSGOInput) : nullptr;
-}
-
-bool __fastcall hkCreateMove(void* pCSGOInput, int nSlot, void* bActive) {
-    bool bResult = g_origCreateMove(pCSGOInput, nSlot, bActive);
-
-    CUserCmd* pCmd = *(CUserCmd**)((uintptr_t)pCSGOInput + 0x2C);
-    if (pCmd) {
-        Bhop::ProcessCommand(pCmd);
-        DoAutostrafeCmd(pCmd);
+static bool GetPresentAddressFromTempSwapChain(void** ppPresent)
+{
+    WNDCLASSEX wc = {};
+    wc.cbSize = sizeof(WNDCLASSEX);
+    wc.lpfnWndProc = DefWindowProc;
+    wc.hInstance = GetModuleHandle(nullptr);
+    wc.lpszClassName = L"TempWindowClass";
+    if (!RegisterClassEx(&wc)) {
+        Log("[-] RegisterClassEx failed");
+        return false;
     }
 
-    return bResult;
+    HWND hWnd = CreateWindowEx(0, L"TempWindowClass", L"", WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, CW_USEDEFAULT, 800, 600,
+        nullptr, nullptr, wc.hInstance, nullptr);
+    if (!hWnd) {
+        Log("[-] CreateWindow failed");
+        UnregisterClass(L"TempWindowClass", wc.hInstance);
+        return false;
+    }
+
+    DXGI_SWAP_CHAIN_DESC sd = {};
+    sd.BufferCount = 1;
+    sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+    sd.BufferDesc.Width = 800;
+    sd.BufferDesc.Height = 600;
+    sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+    sd.OutputWindow = hWnd;
+    sd.SampleDesc.Count = 1;
+    sd.Windowed = TRUE;
+
+    ID3D11Device* pDev = nullptr;
+    ID3D11DeviceContext* pCtx = nullptr;
+    IDXGISwapChain* pSwap = nullptr;
+
+    D3D_FEATURE_LEVEL featureLevel;
+    HRESULT hr = D3D11CreateDeviceAndSwapChain(
+        nullptr,
+        D3D_DRIVER_TYPE_HARDWARE,
+        nullptr,
+        0,
+        nullptr, 0,
+        D3D11_SDK_VERSION,
+        &sd,
+        &pSwap,
+        &pDev,
+        &featureLevel,
+        &pCtx
+    );
+
+    if (FAILED(hr)) {
+        Log("[-] D3D11CreateDeviceAndSwapChain failed (hr=0x%X)", hr);
+        DestroyWindow(hWnd);
+        UnregisterClass(L"TempWindowClass", wc.hInstance);
+        return false;
+    }
+
+    void** vtable = *(void***)pSwap;
+    *ppPresent = vtable[8];
+
+    Log("[+] Present address obtained: %p", *ppPresent);
+
+    pSwap->Release();
+    pDev->Release();
+    pCtx->Release();
+    DestroyWindow(hWnd);
+    UnregisterClass(L"TempWindowClass", wc.hInstance);
+
+    return true;
 }
 
-void InitializeImGui(IDXGISwapChain* pSwapChain) {
+void InitializeImGui(IDXGISwapChain* pSwapChain)
+{
     if (g_imGuiInitialized) return;
+
+    Log("[*] Initializing ImGui...");
 
     HRESULT hr = pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&g_pd3dDevice);
     if (FAILED(hr)) {
-        Log("[-] Imgui GetDevice failed: 0x%X", hr);
+        Log("[-] Failed to get D3D11 device (hr=0x%X)", hr);
         return;
     }
     g_pd3dDevice->GetImmediateContext(&g_pd3dContext);
@@ -66,6 +116,7 @@ void InitializeImGui(IDXGISwapChain* pSwapChain) {
     DXGI_SWAP_CHAIN_DESC sd;
     pSwapChain->GetDesc(&sd);
     g_hwnd = sd.OutputWindow;
+    Log("[+] Window handle: %p", g_hwnd);
 
     ID3D11Texture2D* pBackBuffer = nullptr;
     pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
@@ -74,218 +125,103 @@ void InitializeImGui(IDXGISwapChain* pSwapChain) {
         pBackBuffer->Release();
     }
 
-    g_pSwapChain = pSwapChain;
-    g_pSwapChain->AddRef();
-
     g_origWndProc = (WNDPROC)SetWindowLongPtr(g_hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
 
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
+
     ImFont* font = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\msyh.ttc", 18.0f, nullptr, io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
     if (!font) {
-        Log("[-] Failed to load msyh.ttc, using default font.");
+        Log("[-] Failed to load Microsoft YaHei, using default font");
         io.Fonts->AddFontDefault();
     }
+    else {
+        Log("[+] Microsoft YaHei font loaded");
+    }
+
+    io.IniFilename = nullptr;
 
     ImGui_ImplWin32_Init(g_hwnd);
     ImGui_ImplDX11_Init(g_pd3dDevice, g_pd3dContext);
 
     g_imGuiInitialized = true;
-    Log("[+] Imgui Initialized.");
+    Log("[+] ImGui initialized");
 }
 
-HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT syncInterval, UINT flags) {
-    if (!g_hooksInstalled) {
-        g_hooksInstalled = true;
-        Log("[+] Present hook active.");
-    }
+LRESULT __stdcall WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+    if (g_imGuiInitialized && ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
+        return 1;
+    return CallWindowProc(g_origWndProc, hWnd, msg, wParam, lParam);
+}
 
+HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
+{
     if (!g_imGuiInitialized) {
-        if (++g_frameCounter >= INIT_DELAY_FRAMES)
-            InitializeImGui(pSwapChain);
-        return g_origPresent(pSwapChain, syncInterval, flags);
+        InitializeImGui(pSwapChain);
     }
 
-    if (!g_mainRTV) {
-        ID3D11Texture2D* pBackBuffer = nullptr;
-        HRESULT hr = pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
-        if (SUCCEEDED(hr) && pBackBuffer) {
-            g_pd3dDevice->CreateRenderTargetView(pBackBuffer, nullptr, &g_mainRTV);
-            pBackBuffer->Release();
+    if (g_imGuiInitialized) {
+        ImGui_ImplDX11_NewFrame();
+        ImGui_ImplWin32_NewFrame();
+        ImGui::NewFrame();
+        RenderUI();
+        ImGui::Render();
+
+        if (g_mainRTV) {
+            g_pd3dContext->OMSetRenderTargets(1, &g_mainRTV, nullptr);
         }
-        else {
-            return g_origPresent(pSwapChain, syncInterval, flags);
-        }
+        ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
     }
 
-    ImGui_ImplDX11_NewFrame();
-    ImGui_ImplWin32_NewFrame();
-    ImGui::NewFrame();
-
-    if (g_showMenu)
-        RenderUI(&g_showMenu);
-
-    ImGui::EndFrame();
-    ImGui::Render();
-
-    g_pd3dContext->OMSetRenderTargets(1, &g_mainRTV, nullptr);
-    ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-
-    return g_origPresent(pSwapChain, syncInterval, flags);
+    return g_origPresent(pSwapChain, SyncInterval, Flags);
 }
 
-extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND, UINT, WPARAM, LPARAM);
+bool InitializeHack()
+{
+    Log("[*] Installing Present hook...");
 
-LRESULT __stdcall WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-    if (uMsg == WM_SIZE && g_mainRTV) {
-        g_mainRTV->Release();
-        g_mainRTV = nullptr;
-    }
-
-    if (uMsg == WM_KEYDOWN && wParam == VK_INSERT) {
-        g_showMenu = !g_showMenu;
-        return 0;
-    }
-
-    if (g_imGuiInitialized && ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam))
-        return true;
-
-    return CallWindowProc(g_origWndProc, hwnd, uMsg, wParam, lParam);
-}
-
-static bool InstallPresentHook() {
-    WNDCLASSEX wc = { sizeof(WNDCLASSEX), CS_CLASSDC, DefWindowProc, 0, 0,
-                      GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr,
-                      L"Temp", nullptr };
-    RegisterClassEx(&wc);
-    HWND hTempWnd = CreateWindow(wc.lpszClassName, L"", WS_OVERLAPPEDWINDOW,
-        0, 0, 100, 100, nullptr, nullptr, wc.hInstance, nullptr);
-
-    D3D_FEATURE_LEVEL levels[] = { D3D_FEATURE_LEVEL_11_0, D3D_FEATURE_LEVEL_10_0 };
-    DXGI_SWAP_CHAIN_DESC sd = {};
-    sd.BufferCount = 1;
-    sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-    sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-    sd.OutputWindow = hTempWnd;
-    sd.SampleDesc.Count = 1;
-    sd.Windowed = TRUE;
-    sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-
-    ID3D11Device* pTempDevice = nullptr;
-    IDXGISwapChain* pTempSwapChain = nullptr;
-    HRESULT hr = D3D11CreateDeviceAndSwapChain(
-        nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, 0,
-        levels, ARRAYSIZE(levels), D3D11_SDK_VERSION,
-        &sd, &pTempSwapChain, &pTempDevice, nullptr, nullptr);
-
-    if (FAILED(hr) || !pTempSwapChain) {
-        Log("[-] Failed to create temp D3D11 device.");
-        DestroyWindow(hTempWnd);
-        UnregisterClass(wc.lpszClassName, wc.hInstance);
+    void* pPresent = nullptr;
+    if (!GetPresentAddressFromTempSwapChain(&pPresent)) {
+        Log("[-] Failed to obtain Present address");
         return false;
     }
 
-    void** vtable = *reinterpret_cast<void***>(pTempSwapChain);
-    constexpr int PRESENT_VTABLE_INDEX = 8;
-    void* presentAddr = vtable[PRESENT_VTABLE_INDEX];
-
-    MH_STATUS status = MH_CreateHook(presentAddr, hkPresent, (void**)&g_origPresent);
-    if (status != MH_OK) {
-        Log("[-] MH_CreateHook Present failed: %s", MH_StatusToString(status));
-        pTempDevice->Release();
-        pTempSwapChain->Release();
-        DestroyWindow(hTempWnd);
-        UnregisterClass(wc.lpszClassName, wc.hInstance);
+    if (MH_CreateHook(pPresent, &hkPresent, (void**)&g_origPresent) != MH_OK) {
+        Log("[-] MH_CreateHook failed");
         return false;
     }
 
-    status = MH_EnableHook(presentAddr);
-    if (status != MH_OK)
-        Log("[-] MH_EnableHook Present failed: %s", MH_StatusToString(status));
-    else
-        Log("[+] Present hook installed.");
+    if (MH_EnableHook(pPresent) != MH_OK) {
+        Log("[-] MH_EnableHook failed");
+        return false;
+    }
 
-    pTempDevice->Release();
-    pTempSwapChain->Release();
-    DestroyWindow(hTempWnd);
-    UnregisterClass(wc.lpszClassName, wc.hInstance);
+    g_hooksInstalled = true;
+    Log("[+] Present hook installed");
     return true;
 }
 
-// ===== 全局函数：安装 CreateMove 钩子 =====
-bool InstallCreateMoveHook() {
-    void* pInput = GetCSGOInputInstance();
-    if (!pInput) {
-        Log("[-] CSGOInput instance not found.");
-        return false;
+void ShutdownHack()
+{
+    if (g_hooksInstalled) {
+        MH_DisableHook(MH_ALL_HOOKS);
+        MH_RemoveHook(g_origPresent);
+        g_hooksInstalled = false;
+        Log("[+] Present hook removed");
     }
 
-    void** pVTable = *reinterpret_cast<void***>(pInput);
-    if (!pVTable) {
-        Log("[-] CSGOInput VTable is null.");
-        return false;
+    if (g_imGuiInitialized) {
+        ImGui_ImplDX11_Shutdown();
+        ImGui_ImplWin32_Shutdown();
+        ImGui::DestroyContext();
+        if (g_origWndProc) {
+            SetWindowLongPtr(g_hwnd, GWLP_WNDPROC, (LONG_PTR)g_origWndProc);
+        }
+        if (g_mainRTV) g_mainRTV->Release();
+        if (g_pd3dContext) g_pd3dContext->Release();
+        if (g_pd3dDevice) g_pd3dDevice->Release();
+        g_imGuiInitialized = false;
+        Log("[+] ImGui shutdown");
     }
-    g_inputVTable = pVTable; // 保存用于卸载
-
-    constexpr int CREATE_MOVE_INDEX = 21;
-    void* createMoveAddr = pVTable[CREATE_MOVE_INDEX];
-    if (!createMoveAddr) {
-        Log("[-] CreateMove[21] VTable entry is null.");
-        return false;
-    }
-
-    Log("[+] CreateMove[21] found at 0x%p", createMoveAddr);
-
-    MH_STATUS status = MH_CreateHook(createMoveAddr, hkCreateMove, (void**)&g_origCreateMove);
-    if (status != MH_OK) {
-        Log("[-] MH_CreateHook CreateMove[21] failed: %s", MH_StatusToString(status));
-        return false;
-    }
-
-    status = MH_EnableHook(createMoveAddr);
-    if (status != MH_OK) {
-        Log("[-] MH_EnableHook CreateMove[21] failed: %s", MH_StatusToString(status));
-        return false;
-    }
-
-    Log("[+] CreateMove[21] hook installed.");
-    return true;
-}
-
-// ===== 全局函数：卸载 CreateMove 钩子 =====
-void UninstallCreateMoveHook() {
-    if (g_inputVTable && g_origCreateMove) {
-        // 使用 MinHook 禁用钩子
-        MH_DisableHook(g_origCreateMove);
-        // 或者恢复虚表指针（如果直接修改了）
-        // 但这里我们是 MinHook，不需要手动恢复，MH_DisableHook 会还原
-        Log("[+] CreateMove[21] hook disabled.");
-    }
-    else {
-        Log("[-] Cannot uninstall CreateMove hook: no data.");
-    }
-}
-
-// ===== 初始化所有钩子（可选） =====
-void InitializeHooks() {
-    Log("[+] Waiting for client.dll...");
-    while (!GetModuleHandleA("client.dll")) Sleep(100);
-    Log("[+] client.dll loaded.");
-
-    Log("[+] Waiting for CSGOInput...");
-    while (!GetCSGOInputInstance()) Sleep(100);
-    Log("[+] CSGOInput found.");
-
-    if (MH_Initialize() != MH_OK) {
-        Log("[-] MH_Initialize failed.");
-        return;
-    }
-
-    if (!InstallPresentHook())
-        Log("[-] Failed to install Present hook.");
-
-    if (!InstallCreateMoveHook())
-        Log("[-] Failed to install CreateMove[21] hook.");
-
-    Log("[+] All hooks installed.");
 }

@@ -1,31 +1,21 @@
-// hack/ui.cpp
 #include "ui.h"
+#include "vacexploit.h"
 #include "imgui.h"
-#include "Console.h"
-#include "Bhop.h"
-#include "Autostrafe.h"
 
-void RenderUI(bool* p_open) {
-    ImGui::Begin("Plugin", p_open);
+void RenderUI()
+{
+    ImGui::SetNextWindowPos(ImVec2(100, 100), ImGuiCond_FirstUseEver);
+    ImGui::SetNextWindowSize(ImVec2(200, 80), ImGuiCond_FirstUseEver);
 
-    bool bhop = Bhop::IsEnabled();
-    if (ImGui::Checkbox("Bhop", &bhop)) {
-        Bhop::SetEnabled(bhop);
-    }
+    ImGui::Begin("Plugin", nullptr, ImGuiWindowFlags_NoResize);
 
-    bool autostrafe = Autostrafe::IsEnabled();
-    if (ImGui::Checkbox("Autostrafe", &autostrafe)) {
-        Autostrafe::SetEnabled(autostrafe);
-    }
-
-    if (autostrafe) {
-        const char* modes[] = { "Normal", "Subtick" };
-        int currentMode = (Autostrafe::GetMode() == AutostrafeMode::Normal) ? 0 : 1;
-        if (ImGui::Combo("Mode", &currentMode, modes, IM_ARRAYSIZE(modes))) {
-            Autostrafe::SetMode(currentMode == 0 ? AutostrafeMode::Normal : AutostrafeMode::Subtick);
+    bool enabled = g_vac_exploit_enabled;
+    if (ImGui::Checkbox("VAC Exploit", &enabled)) {
+        g_vac_exploit_enabled = enabled;
+        if (!enabled) {
+            g_vac_burst_remaining = 0;
         }
     }
 
     ImGui::End();
-    DrawConsole(nullptr);
 }
