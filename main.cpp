@@ -1,7 +1,7 @@
 #include "hack/hook.h"
 #include "hack/console.h"
 #include "hack/vacexploit.h"
-#include "MinHook.h"
+#include "minhook/MinHook.h"
 
 DWORD WINAPI MainThread(LPVOID)
 {
