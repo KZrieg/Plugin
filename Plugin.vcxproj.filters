@@ -2250,6 +2250,9 @@
     <ClInclude Include="protobufs\cs_usercmd.pb.h">
       <Filter>protobufs</Filter>
     </ClInclude>
+    <ClInclude Include="hack\cmd_utils.h">
+      <Filter>hack</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="minhook\minhook.lib">

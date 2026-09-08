@@ -1,17 +1,13 @@
-// Autostrafe.h
+// hack/Autostrafe.h
 #pragma once
 #include <atomic>
-
-struct CUserCmd;
+#include "cmd_utils.h"
 
 enum class AutostrafeMode {
     Normal,
     Subtick
 };
 
-extern std::atomic<bool> autostrafeEnabled;
-extern std::atomic<AutostrafeMode> autostrafeMode;
-// Autostrafe.h
 namespace Autostrafe {
     bool IsEnabled();
     void SetEnabled(bool enabled);
@@ -20,4 +16,3 @@ namespace Autostrafe {
 }
 
 void DoAutostrafeCmd(CUserCmd* cmd);
-void DoAutostrafe();

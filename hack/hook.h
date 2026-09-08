@@ -1,8 +1,7 @@
-// hook.h
+// hack/hook.h
 #pragma once
 
-// 初始化所有钩子（在独立线程中调用）
-void InitializeHooks();
+using CreateMoveFn = bool(__fastcall*)(void*, int, void*);
 
-// 菜单显示状态（外部可访问）
-extern bool g_showMenu;
+bool InstallCreateMoveHook();
+void UninstallCreateMoveHook();

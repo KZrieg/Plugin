@@ -45,6 +45,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="hack\cmd_utils.h" />
     <ClInclude Include="hack\console.h" />
     <ClInclude Include="hack\hook.h" />
     <ClInclude Include="hack\ui.h" />

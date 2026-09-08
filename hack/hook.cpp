@@ -7,6 +7,7 @@
 #include "imgui_impl_dx11.h"
 #include "ui.h"
 #include "Bhop.h"
+#include "Autostrafe.h"
 #include <MinHook.h>
 #include <d3d11.h>
 
@@ -30,6 +31,7 @@ static PresentFn g_origPresent = nullptr;
 
 using CreateMoveFn = bool(__fastcall*)(void*, int, void*);
 static CreateMoveFn g_origCreateMove = nullptr;
+static void** g_inputVTable = nullptr; // 保存虚表指针用于卸载
 
 LRESULT __stdcall WndProc(HWND, UINT, WPARAM, LPARAM);
 void InitializeImGui(IDXGISwapChain* pSwapChain);
@@ -42,11 +44,10 @@ void* GetCSGOInputInstance() {
 bool __fastcall hkCreateMove(void* pCSGOInput, int nSlot, void* bActive) {
     bool bResult = g_origCreateMove(pCSGOInput, nSlot, bActive);
 
-    // 获取 CUserCmd 指针
     CUserCmd* pCmd = *(CUserCmd**)((uintptr_t)pCSGOInput + 0x2C);
     if (pCmd) {
-        // 调用 Bhop 处理
         Bhop::ProcessCommand(pCmd);
+        DoAutostrafeCmd(pCmd);
     }
 
     return bResult;
@@ -211,7 +212,8 @@ static bool InstallPresentHook() {
     return true;
 }
 
-static bool InstallCreateMoveHook() {
+// ===== 全局函数：安装 CreateMove 钩子 =====
+bool InstallCreateMoveHook() {
     void* pInput = GetCSGOInputInstance();
     if (!pInput) {
         Log("[-] CSGOInput instance not found.");
@@ -223,32 +225,48 @@ static bool InstallCreateMoveHook() {
         Log("[-] CSGOInput VTable is null.");
         return false;
     }
+    g_inputVTable = pVTable; // 保存用于卸载
 
-    constexpr int CREATE_MOVE_INDEX = 5;
+    constexpr int CREATE_MOVE_INDEX = 21;
     void* createMoveAddr = pVTable[CREATE_MOVE_INDEX];
     if (!createMoveAddr) {
-        Log("[-] CreateMove VTable entry is null.");
+        Log("[-] CreateMove[21] VTable entry is null.");
         return false;
     }
 
-    Log("[+] CreateMove found at 0x%p", createMoveAddr);
+    Log("[+] CreateMove[21] found at 0x%p", createMoveAddr);
 
     MH_STATUS status = MH_CreateHook(createMoveAddr, hkCreateMove, (void**)&g_origCreateMove);
     if (status != MH_OK) {
-        Log("[-] MH_CreateHook CreateMove failed: %s", MH_StatusToString(status));
+        Log("[-] MH_CreateHook CreateMove[21] failed: %s", MH_StatusToString(status));
         return false;
     }
 
     status = MH_EnableHook(createMoveAddr);
     if (status != MH_OK) {
-        Log("[-] MH_EnableHook CreateMove failed: %s", MH_StatusToString(status));
+        Log("[-] MH_EnableHook CreateMove[21] failed: %s", MH_StatusToString(status));
         return false;
     }
 
-    Log("[+] CreateMove hook installed.");
+    Log("[+] CreateMove[21] hook installed.");
     return true;
 }
 
+// ===== 全局函数：卸载 CreateMove 钩子 =====
+void UninstallCreateMoveHook() {
+    if (g_inputVTable && g_origCreateMove) {
+        // 使用 MinHook 禁用钩子
+        MH_DisableHook(g_origCreateMove);
+        // 或者恢复虚表指针（如果直接修改了）
+        // 但这里我们是 MinHook，不需要手动恢复，MH_DisableHook 会还原
+        Log("[+] CreateMove[21] hook disabled.");
+    }
+    else {
+        Log("[-] Cannot uninstall CreateMove hook: no data.");
+    }
+}
+
+// ===== 初始化所有钩子（可选） =====
 void InitializeHooks() {
     Log("[+] Waiting for client.dll...");
     while (!GetModuleHandleA("client.dll")) Sleep(100);
@@ -267,7 +285,7 @@ void InitializeHooks() {
         Log("[-] Failed to install Present hook.");
 
     if (!InstallCreateMoveHook())
-        Log("[-] Failed to install CreateMove hook.");
+        Log("[-] Failed to install CreateMove[21] hook.");
 
     Log("[+] All hooks installed.");
 }
