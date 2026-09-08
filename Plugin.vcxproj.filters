@@ -265,12 +265,12 @@
     <Filter Include="utils\protobufs\upb\mem\internal">
       <UniqueIdentifier>{02d89da4-c0ac-4410-abc4-5d4176452f97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="hack\menu">
+      <UniqueIdentifier>{f735f6f5-fade-46b9-ba71-89efab37ce20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hack\console.h">
-      <Filter>hack</Filter>
-    </ClInclude>
-    <ClInclude Include="hack\ui.h">
       <Filter>hack</Filter>
     </ClInclude>
     <ClInclude Include="dumper\interfaces.hpp">
@@ -2289,6 +2289,12 @@
     <ClInclude Include="uitls\protobufs\absl\algorithm\container.h">
       <Filter>utils\protobufs\absl\algorithm</Filter>
     </ClInclude>
+    <ClInclude Include="hack\menu\ui.h">
+      <Filter>hack\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="hack\menu\ShortcutKey.h">
+      <Filter>hack\menu</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="uitls\minhook\minhook.lib">
@@ -2576,9 +2582,6 @@
     <ClCompile Include="hack\console.cpp">
       <Filter>hack</Filter>
     </ClCompile>
-    <ClCompile Include="hack\ui.cpp">
-      <Filter>hack</Filter>
-    </ClCompile>
     <ClCompile Include="hack\hook.cpp">
       <Filter>hack</Filter>
     </ClCompile>
@@ -2620,6 +2623,12 @@
     </ClCompile>
     <ClCompile Include="uitls\protobufs\cs_gameevents.pb.cc">
       <Filter>utils\protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\menu\ui.cpp">
+      <Filter>hack\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\menu\ShortcutKey.cpp">
+      <Filter>hack\menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

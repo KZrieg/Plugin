@@ -42,7 +42,8 @@
     <ClInclude Include="dumper\worldrenderer_dll.hpp" />
     <ClInclude Include="hack\console.h" />
     <ClInclude Include="hack\hook.h" />
-    <ClInclude Include="hack\ui.h" />
+    <ClInclude Include="hack\menu\ShortcutKey.h" />
+    <ClInclude Include="hack\menu\ui.h" />
     <ClInclude Include="hack\vacexploit.h" />
     <ClInclude Include="uitls\cs2_sdk.hpp" />
     <ClInclude Include="uitls\imgui\imconfig.h" />
@@ -792,7 +793,8 @@
   <ItemGroup>
     <ClCompile Include="hack\console.cpp" />
     <ClCompile Include="hack\hook.cpp" />
-    <ClCompile Include="hack\ui.cpp" />
+    <ClCompile Include="hack\menu\ShortcutKey.cpp" />
+    <ClCompile Include="hack\menu\ui.cpp" />
     <ClCompile Include="hack\vacexploit.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="uitls\imgui\imgui.cpp" />
