@@ -7,7 +7,7 @@ void RenderUI()
     ImGui::SetNextWindowPos(ImVec2(100, 100), ImGuiCond_FirstUseEver);
     ImGui::SetNextWindowSize(ImVec2(200, 80), ImGuiCond_FirstUseEver);
 
-    ImGui::Begin("Plugin", nullptr, ImGuiWindowFlags_NoResize);
+    ImGui::Begin("Plugin", nullptr);
 
     bool enabled = g_vac_exploit_enabled;
     if (ImGui::Checkbox("VAC Exploit", &enabled)) {

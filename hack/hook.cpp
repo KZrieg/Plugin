@@ -26,6 +26,7 @@ static HWND g_hwnd = nullptr;
 static WNDPROC g_origWndProc = nullptr;
 static bool g_imGuiInitialized = false;
 static bool g_hooksInstalled = false;
+static bool g_showUI = true;
 
 LRESULT __stdcall WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -150,8 +151,14 @@ void InitializeImGui(IDXGISwapChain* pSwapChain)
 
 LRESULT __stdcall WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
+    if (msg == WM_KEYDOWN && wParam == VK_INSERT) {
+        g_showUI = !g_showUI;
+        return 1;
+    }
+
     if (g_imGuiInitialized && ImGui_ImplWin32_WndProcHandler(hWnd, msg, wParam, lParam))
         return 1;
+
     return CallWindowProc(g_origWndProc, hWnd, msg, wParam, lParam);
 }
 
@@ -165,7 +172,11 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
         ImGui_ImplDX11_NewFrame();
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
-        RenderUI();
+
+        if (g_showUI) {
+            RenderUI();
+        }
+
         ImGui::Render();
 
         if (g_mainRTV) {
