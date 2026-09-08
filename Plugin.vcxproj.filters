@@ -288,12 +288,6 @@
     <ClInclude Include="hack\ui.h">
       <Filter>hack</Filter>
     </ClInclude>
-    <ClInclude Include="hack\Autostrafe.h">
-      <Filter>hack</Filter>
-    </ClInclude>
-    <ClInclude Include="hack\Bhop.h">
-      <Filter>hack</Filter>
-    </ClInclude>
     <ClInclude Include="dumper\interfaces.hpp">
       <Filter>dumper</Filter>
     </ClInclude>
@@ -2250,7 +2244,7 @@
     <ClInclude Include="protobufs\cs_usercmd.pb.h">
       <Filter>protobufs</Filter>
     </ClInclude>
-    <ClInclude Include="hack\cmd_utils.h">
+    <ClInclude Include="hack\vacexploit.h">
       <Filter>hack</Filter>
     </ClInclude>
   </ItemGroup>
@@ -2561,12 +2555,6 @@
     <ClCompile Include="hack\ui.cpp">
       <Filter>hack</Filter>
     </ClCompile>
-    <ClCompile Include="hack\Bhop.cpp">
-      <Filter>hack</Filter>
-    </ClCompile>
-    <ClCompile Include="hack\Autostrafe.cpp">
-      <Filter>hack</Filter>
-    </ClCompile>
     <ClCompile Include="hack\hook.cpp">
       <Filter>hack</Filter>
     </ClCompile>
@@ -2587,6 +2575,9 @@
     </ClCompile>
     <ClCompile Include="protobufs\cs_gameevents.pb.cc">
       <Filter>protobufs</Filter>
+    </ClCompile>
+    <ClCompile Include="hack\vacexploit.cpp">
+      <Filter>hack</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

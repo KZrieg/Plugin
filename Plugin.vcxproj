@@ -40,15 +40,10 @@
     <ClInclude Include="dumper\steamaudio_dll.hpp" />
     <ClInclude Include="dumper\vphysics2_dll.hpp" />
     <ClInclude Include="dumper\worldrenderer_dll.hpp" />
-    <ClInclude Include="hack\Autostrafe.h" />
-    <ClInclude Include="hack\Bhop.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="hack\cmd_utils.h" />
     <ClInclude Include="hack\console.h" />
     <ClInclude Include="hack\hook.h" />
     <ClInclude Include="hack\ui.h" />
+    <ClInclude Include="hack\vacexploit.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
     <ClInclude Include="imgui\imgui_impl_dx11.h" />
@@ -785,14 +780,10 @@
     <Library Include="protobufs\google\lib\libutf8_validity.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hack\Autostrafe.cpp" />
-    <ClCompile Include="hack\Bhop.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="hack\console.cpp" />
     <ClCompile Include="hack\hook.cpp" />
     <ClCompile Include="hack\ui.cpp" />
+    <ClCompile Include="hack\vacexploit.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="imgui\imgui_impl_dx11.cpp" />
